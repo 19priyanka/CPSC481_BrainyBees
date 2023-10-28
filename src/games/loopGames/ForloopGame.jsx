@@ -19,7 +19,7 @@ function ForloopGame(props) {
 
     return (
         <>
-      <div>Complete the Loop condition such that only 5 of the circles are filled after running the code</div>
+      <div>Complete the code such that only 5 of the circles are filled after running the code</div>
         <div className="margin-top margin-bottom box">
         &#40;<code>  for int i =  </code><input value={initalizeIndex}/>
             <code>; </code><input value={loopConditionLeft}/>
