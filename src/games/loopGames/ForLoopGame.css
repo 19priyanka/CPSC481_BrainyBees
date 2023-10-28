@@ -7,6 +7,10 @@
     margin: 5px;
     cursor: pointer;
 }
+
+.flex {
+    display: flex;
+}
 .red {
     background-color: red;
 }
@@ -16,4 +20,20 @@
 
 .margin-bottom {
     margin-bottom: 1em;
+}
+
+.box {
+    border: 1px solid black;
+    padding:5px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.grid-box {
+    border: 1px solid black;
+    width: 5em;
+    height: 5em;
+
 }

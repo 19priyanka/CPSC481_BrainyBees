@@ -11,36 +11,32 @@ function ForloopGame(props) {
     const submitSolution = ()=> {
        
     }
+    const [initalizeIndex,setIntializeIndex] = useState('');
+    const [loopConditionLeft,setLoopConditionLeft] = useState('');
+    const [loopConditionRight,setLoopConditionRight] = useState('');
+    const [incrementIndex,setIncrementIndex] = useState('');
+
 
     return (
         <>
       <div>Complete the Loop condition such that only 5 of the circles are filled after running the code</div>
-        <div className="margin-top margin-bottom">
-        &#40;<code>  for int i =  </code> <TextField
-            hiddenLabel
-           
-            variant="filled"
-            size="small"
-            />
-            <code>; </code> <TextField
-            hiddenLabel
-           
-            variant="filled"
-            size="small"
-            />
+        <div className="margin-top margin-bottom box">
+        &#40;<code>  for int i =  </code><input value={initalizeIndex}/>
+            <code>; </code><input value={loopConditionLeft}/>
+            <code>&#60;</code>
+            <input value={loopConditionRight}/>
+
             <code>;</code>
-            <TextField
-            hiddenLabel
-            variant="filled"
-            size="small"></TextField>
+            <input value={incrementIndex}/>
+            <code>++</code>
             <code>&#41;</code>
             <code>&#123;</code>
             <code style={{display: "block"}}>fillNextCircle&#40;&#41;</code>
             <code style={{display: "block"}} >&#125;</code>
         </div>
-        <Button className='margin-top' variant="contained" onClick={() => submitSolution}>Submit</Button>
+        <Button className='margin-top' variant="contained" onClick={() => submitSolution()}>Submit</Button>
 
-        <div className="margin-top" >
+        <div className="margin-top flex">
         {
             Array.from({length: circleColoredInCount}).map(() => {
                 return <div className="circle red"></div>
