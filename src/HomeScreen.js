@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import GenericSelectionPage from "./GenericSelectionPage.jsx";
 import GenericBanner from "./GenericBanner.jsx";
 function HomeScreen(props) {
-  const navigate = useNavigate();
+    const navigate = useNavigate(); 
+    //change this later, just an example right now
   //change this later, just an example right now
   const links = [
     { link: "/homescreen", name: "Test1" },
