@@ -1,0 +1,51 @@
+/* Body Styling */
+body {
+    margin: 0;
+}
+
+/* Languages Section (Python, Java, C++) Styling */
+
+.languagesBtn {
+    background-color: blue;
+    color: white;
+    padding-top: 1%;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    border: none;
+    border-radius: 10%;
+    cursor: pointer;
+    margin-right: 2%;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .languagesSelection {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: lightgray;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 1;
+  }
+  
+  .languagesSelection a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .languagesSelection a:hover {background-color: #f1f1f1;}
+  .dropdown:hover .languagesSelection {display: block;}
+  .dropdown:hover .languagesBtn {background-color: lightblue;}
+
+
+/* Title Section Styling */
+h1 {
+    text-align: center;
+}
