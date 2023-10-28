@@ -1,16 +1,14 @@
 .list {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin-top: 0.5em ;
-  
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 0.5em;
 }
 
 .list-item {
-    
 }
 
 .container {
-    display: flex;
-    gap:50%;
+  display: flex;
+  gap: 50%;
 }
