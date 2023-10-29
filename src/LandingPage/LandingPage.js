@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom"
-import {Grid} from '@mui/material';
+import {Grid, Stack, Divider} from '@mui/material';
 import './LandingPage.css';
 import FancyBeeFacingLeft from '../bee_icon/png/FancyBeeFacingLeft.png';
 import FancyBeeFacingRight from '../bee_icon/png/FancyBeeFacingRight.png';
@@ -28,7 +28,14 @@ export default function LandingPage(props) {
           Where Learning Takes Flight
             </em> </h1>
           </Grid>
-      
+      <Stack direction="row" spacing={2}  divider={<Divider orientation="vertical" flexItem />}>
+        <Stack item>
+        <div className="circle">
+        <p>Text 1</p>
+        </div>
+        
+        </Stack>
+      </Stack>
 
       </Grid>
 

@@ -35,3 +35,16 @@
     color:#ffa700;
     margin-bottom: 1em;
 }
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border-radius: 50%; /* Creates a circle */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    color: red;
+    font-weight: bold;
+  }
