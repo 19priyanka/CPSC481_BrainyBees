@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import GenericSelectionPage from "./GenericSelectionPage.jsx";
+import GenericSelectionPage from "../GenericSelectionPage.jsx";
 function HomeScreen(props) {
   const navigate = useNavigate();
   //change this later, just an example right now

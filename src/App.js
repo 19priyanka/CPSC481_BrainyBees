@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LandingPage from "./LandingPage";
-import HomeScreen from "./HomeScreen"; // Import HomeScreen or other components
+import LandingPage from "./LandingPage/LandingPage";
+import HomeScreen from "./HomeScreen/HomeScreen"; // Import HomeScreen or other components
 import QuizLanding from "./Quiz/QuizLanding";
 import QuizLoops from "./Quiz/QuizLoops";
 import QuizPage from "./Quiz/QuizPage";
