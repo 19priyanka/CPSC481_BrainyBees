@@ -1,15 +1,21 @@
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import './ForLoopGame.css'
 import Button from '@mui/material/Button';
-
+import GenericBanner from '../../GenericBanner.jsx';
+import { useNavigate } from "react-router-dom";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function ForloopGame(props) {
+    const navigate = useNavigate();
+
 
     const [circleColoredInCount, setColoredInCount] = useState(0);
     const submitSolution = ()=> {
        
+    }
+
+    const showHint = () => {
     }
     const [initalizeIndex,setIntializeIndex] = useState('');
     const [loopConditionLeft,setLoopConditionLeft] = useState('');
@@ -19,7 +25,15 @@ function ForloopGame(props) {
 
     return (
         <>
+      <GenericBanner></GenericBanner>
+      
+      <h1>For Loop Game</h1>
+     
+
+      <div className="description">
       <div>Complete the code such that only 5 of the circles are filled after running the code</div>
+      <Button variant="contained" onClick={() => showHint()}>Hint</Button>
+      </div>
         <div className="margin-top margin-bottom box">
         &#40;<code>  for int i =  </code><input value={initalizeIndex}/>
             <code>; </code><input value={loopConditionLeft}/>
@@ -48,6 +62,7 @@ function ForloopGame(props) {
             })
         }
         </div>
+        <div class="footer"><Button variant="text" onClick={() => navigate("/games/loops/whileloopgame")}>Next Game <ArrowForwardIcon></ArrowForwardIcon> </Button></div>
     </>
     )
 }

@@ -13,7 +13,18 @@ function GenericSelectionPage({ links, handleChange, title }) {
 
   return (
     <>
+     <div className="titlebox">
       <h1 style={{ color: "blue" }}>{title}</h1>
+      <Autocomplete
+          sx={{ width: 200 }}
+          options={languages}
+          renderInput={(params) => (
+            <TextField {...params} label="Select Language" />
+          )}
+          onChange={(event, value) => handleChange(value)}
+          defaultValue={def}
+        />
+      </div>
       <div className="container">
         <div className="list">
           {links.map((object, i) => (
@@ -24,15 +35,7 @@ function GenericSelectionPage({ links, handleChange, title }) {
             </div>
           ))}
         </div>
-        <Autocomplete
-          sx={{ width: 200 }}
-          options={languages}
-          renderInput={(params) => (
-            <TextField {...params} label="Select Language" />
-          )}
-          onChange={(event, value) => handleChange(value)}
-          defaultValue={def}
-        />
+        
       </div>
     </>
   );

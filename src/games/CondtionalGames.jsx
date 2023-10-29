@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import GenericSelectionPage from "../GenericSelectionPage.jsx"
+import GenericBanner from '../GenericBanner.jsx';
 
 
 function CondtionalGames(props) {
@@ -10,8 +11,8 @@ function CondtionalGames(props) {
 
     return (
         <>
-      
-      <GenericSelectionPage links={links} handleChange={(value)=> {console.log(value)}}/>
+      <GenericBanner></GenericBanner>
+      <GenericSelectionPage links={links} handleChange={(value)=> {console.log(value)}} title="Conditionals"/>
 
     </>
     )

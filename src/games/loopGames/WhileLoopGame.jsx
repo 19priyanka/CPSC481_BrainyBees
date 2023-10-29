@@ -1,11 +1,16 @@
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import './ForLoopGame.css'
 import Button from '@mui/material/Button';
+import GenericBanner from '../../GenericBanner.jsx';
+import { useNavigate } from "react-router-dom";
 
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function WhileloopGame(props) {
+
+    const navigate = useNavigate();
+
 
     const [redPosition, setRedPosition] = useState(1);
     const [bluePosition, setBluePosition] = useState(0);
@@ -15,13 +20,20 @@ function WhileloopGame(props) {
     const submitSolution = ()=> {
        
     }
+    const showHint = () => {
+    }
 
     return (
         <>
+      <GenericBanner></GenericBanner>
+      <h1>While Loop Game</h1>
+      <div className="description">
       <div>Complete the Loop condition such that red dot runs away from the blue dot if the blue dot is 1 space away from the red dot</div>
+      <Button variant="contained" onClick={() => showHint()}>Hint</Button>
+      </div>
         <div className="margin-top margin-bottom box">
             <code>void redDotRunAway&#40;&#41; </code> <code>&#123;</code>
-            <code style={{display: "block"}}>runAway&#40;&#41;</code>
+            <code style={{display: "block"}}>runAway&#40;&#41;;</code>
             <code style={{display: "block"}} >&#125;</code>
             <br></br>
             <code>int main&#40;&#41; </code> <code>&#123;</code>
@@ -62,6 +74,7 @@ function WhileloopGame(props) {
             })
         }
         </div>
+        <div class="footer"><Button variant="text" onClick={() => navigate("/games/loops/forloopgame")}>Next Game <ArrowForwardIcon></ArrowForwardIcon> </Button></div>
     </>
     )
 }

@@ -12,3 +12,8 @@
   display: flex;
   gap: 50%;
 }
+
+.titlebox {
+  display: flex;
+  justify-content: space-between;
+}
