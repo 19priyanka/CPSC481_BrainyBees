@@ -25,3 +25,9 @@
   display: flex;
   justify-content: center;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1em;
+}
