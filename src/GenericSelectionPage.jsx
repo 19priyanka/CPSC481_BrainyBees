@@ -12,24 +12,14 @@ function GenericSelectionPage({ links, handleChange, title }) {
   const def = "C++";
 
   return (
-    <>
-     <div className="titlebox">
+    <div className="center-vertical" >
+    <div class="center">
       <h1 style={{ color: "blue" }}>{title}</h1>
-      <Autocomplete
-          sx={{ width: 200 }}
-          options={languages}
-          renderInput={(params) => (
-            <TextField {...params} label="Select Language" />
-          )}
-          onChange={(event, value) => handleChange(value)}
-          defaultValue={def}
-        />
-      </div>
       <div className="container">
         <div className="list">
           {links.map((object, i) => (
             <div className="list-item">
-              <Button variant="contained" onClick={() => navigate(object.link)}>
+              <Button style={{maxWidth: '11em', maxHeight: '3.5em', minWidth: '11em', minHeight: '3.5em'}} variant="contained" onClick={() => navigate(object.link)}>
                 {object.name}
               </Button>
             </div>
@@ -37,7 +27,17 @@ function GenericSelectionPage({ links, handleChange, title }) {
         </div>
         
       </div>
-    </>
+    </div>
+    <Autocomplete
+          sx={{ width: 200, marginLeft:10 }}
+          options={languages}
+          renderInput={(params) => (
+            <TextField {...params} label="Language" />
+          )}
+          onChange={(event, value) => handleChange(value)}
+          defaultValue={def}
+        />
+    </div>
   );
 }
 

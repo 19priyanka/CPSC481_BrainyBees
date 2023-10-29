@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import GenericBanner from '../../GenericBanner.jsx';
 import { useNavigate } from "react-router-dom";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-
+import ShowPath from '../../Showpath';
 function ForloopGame(props) {
     const navigate = useNavigate();
 
@@ -26,7 +26,7 @@ function ForloopGame(props) {
     return (
         <>
       <GenericBanner></GenericBanner>
-      
+      <ShowPath></ShowPath>
       <h1>For Loop Game</h1>
      
 
@@ -62,7 +62,7 @@ function ForloopGame(props) {
             })
         }
         </div>
-        <div class="footer"><Button variant="text" onClick={() => navigate("/games/loops/whileloopgame")}>Next Game <ArrowForwardIcon></ArrowForwardIcon> </Button></div>
+        <div className="footer"><Button variant="text" onClick={() => navigate("/games/loops/whileloopgame")}>Next Game <ArrowForwardIcon></ArrowForwardIcon> </Button></div>
     </>
     )
 }

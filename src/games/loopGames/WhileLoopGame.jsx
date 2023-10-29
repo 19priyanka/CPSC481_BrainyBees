@@ -6,6 +6,7 @@ import GenericBanner from '../../GenericBanner.jsx';
 import { useNavigate } from "react-router-dom";
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ShowPath from '../../Showpath';
 
 function WhileloopGame(props) {
 
@@ -26,6 +27,8 @@ function WhileloopGame(props) {
     return (
         <>
       <GenericBanner></GenericBanner>
+      <ShowPath></ShowPath>
+
       <h1>While Loop Game</h1>
       <div className="description">
       <div>Complete the Loop condition such that red dot runs away from the blue dot if the blue dot is 1 space away from the red dot</div>
@@ -74,7 +77,7 @@ function WhileloopGame(props) {
             })
         }
         </div>
-        <div class="footer"><Button variant="text" onClick={() => navigate("/games/loops/forloopgame")}>Next Game <ArrowForwardIcon></ArrowForwardIcon> </Button></div>
+        <div className="footer"><Button variant="text" onClick={() => navigate("/games/loops/forloopgame")}>Next Game <ArrowForwardIcon></ArrowForwardIcon> </Button></div>
     </>
     )
 }

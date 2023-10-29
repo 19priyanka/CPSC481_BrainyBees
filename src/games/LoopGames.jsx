@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import GenericSelectionPage from "../GenericSelectionPage.jsx"
 import GenericBanner from '../GenericBanner.jsx';
+import ShowPath from '../Showpath';
 
 
 function GamesNavigationConcept(props) {
@@ -12,6 +13,8 @@ function GamesNavigationConcept(props) {
     return (
         <>
       <GenericBanner></GenericBanner>
+      <ShowPath></ShowPath>
+
       <GenericSelectionPage links={links} handleChange={(value)=> {console.log(value)}} title="Loops"/>
 
     </>
