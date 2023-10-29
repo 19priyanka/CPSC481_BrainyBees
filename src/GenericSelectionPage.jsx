@@ -17,7 +17,7 @@ function GenericSelectionPage({ links, handleChange, title }) {
       <div className="container">
         <div className="list">
           {links.map((object, i) => (
-            <div class="list-item">
+            <div className="list-item">
               <Button variant="contained" onClick={() => navigate(object.link)}>
                 {object.name}
               </Button>
