@@ -15,7 +15,7 @@ function HomeScreen(props) {
       <GenericSelectionPage
         links={links}
         grid={true}
-        handleChange={(value) => {
+        handleLanguageChange={(value) => {
           console.log(value);
         }}
         title="BrainyBees HomeScreen"

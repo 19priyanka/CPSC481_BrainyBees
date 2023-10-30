@@ -13,7 +13,7 @@ function CondtionalGames(props) {
         <>
       <ShowPath></ShowPath>
 
-      <GenericSelectionPage links={links} handleChange={(value)=> {console.log(value)}} title="Conditionals"/>
+      <GenericSelectionPage links={links} handleLanguage={(value)=> {console.log(value)}} title="Conditionals"/>
 
     </>
     )

@@ -52,6 +52,8 @@ function Navbar() {
     
   ]
 
+  const [currentPage,setCurrentPage] = useState('')
+
   const setLocalStorage = ()=>{
     const userName = sessionStorage.getItem("userName")
       if(userName !== null){
@@ -76,6 +78,17 @@ function Navbar() {
         
     },0)
   
+    if(userName !== null){
+      setUserName(userName)
+    }
+    // get current page
+    const current = window.location.pathname
+    pages.forEach((page)=> {
+      if(current.includes(page.link)) {
+        setCurrentPage(page.link)
+      }
+    })
+    debugger
   
   }, [dontShowRoutes, location])
 
@@ -137,8 +150,12 @@ function Navbar() {
             {!dontShowPages && pages.map((page) => (
               <Button
                 key={page.name}
-                onClick={()=>{navigate(page.link)}}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                
+                onClick={()=>{
+                  setCurrentPage(page.link)  
+                  navigate(page.link)}}
+                sx={{   '&:hover': { backgroundColor: '#00008B' }, my: 2, color: 'white', display: 'block',    ...(page.link === currentPage? {textDecoration: 'underline'}: {})
+              }}
               >
                 {page.name}
               </Button>
@@ -152,8 +169,8 @@ function Navbar() {
               !userName ? 
               <Button
               onClick={()=>{navigate('/login')}}
-              sx={{ my: 2, color: 'white', display: 'block' }}>Login</Button> :
-              <div onClick={openUserMenu}>Welcome {userName} </div>
+              sx={{ '&:hover': { backgroundColor: '#00008B' }, my: 2, color: 'white', display: 'block' }}>Login</Button> :
+              <div>Welcome {userName} </div>
             }
           </Box>
           <Menu

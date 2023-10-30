@@ -13,7 +13,7 @@ function OperatorGames(props) {
         <>
       <ShowPath></ShowPath>
 
-      <GenericSelectionPage links={links} handleChange={(value)=> {console.log(value)}} title="Operators"/>
+      <GenericSelectionPage links={links} handleLanguageChange={(value)=> {console.log(value)}} title="Operators"/>
 
     </>
     )

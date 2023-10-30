@@ -15,7 +15,7 @@ function GamesNavigationConcept(props) {
         <>
       <ShowPath></ShowPath>
 
-      <GenericSelectionPage links={links} handleChange={(value)=> {console.log(value)}} title="Loops" grid={true}/>
+      <GenericSelectionPage links={links} handleLanguageChange={(value)=> {console.log(value)}} title="Loops" grid={true}/>
 
     </>
     )
