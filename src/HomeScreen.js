@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import GenericSelectionPage from "./GenericSelectionPage.jsx";
-import GenericBanner from "./GenericBanner.jsx";
+
 function HomeScreen(props) {
     const navigate = useNavigate(); 
     //change this later, just an example right now
@@ -13,7 +13,7 @@ function HomeScreen(props) {
   ];
   return (
     <>
-      <GenericBanner></GenericBanner>
+
       <button onClick={() => navigate("/")}>Back to Landing</button>
       <button onClick={() => navigate(-1)}>Back</button>
       <GenericSelectionPage

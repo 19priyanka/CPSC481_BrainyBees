@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useState } from 'react';
 import './ForLoopGame.css'
 import Button from '@mui/material/Button';
-import GenericBanner from '../../GenericBanner.jsx';
 import { useNavigate } from "react-router-dom";
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -26,7 +25,6 @@ function WhileloopGame(props) {
 
     return (
         <>
-      <GenericBanner></GenericBanner>
       <ShowPath></ShowPath>
 
       <h1>While Loop Game</h1>

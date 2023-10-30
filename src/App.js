@@ -9,10 +9,15 @@ import GamesNavigationConcept from './games/GamesNavigationConcept';
 import LoopGames from './games/LoopGames';
 import ForloopGame from './games/loopGames/ForloopGame';
 import WhileLoopGame from './games/loopGames/WhileLoopGame';
+import Navbar from './Navbar';
 
 function App() {
   return (
+    <>
+   
+    
     <Router>
+    <Navbar></Navbar>
       <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/homescreen" element={<HomeScreen />} />
@@ -28,6 +33,7 @@ function App() {
       <Route path="/games/loops/whileloopgame" element={<WhileLoopGame />} />
       </Routes>
     </Router>
+    </>
   );
 }
 

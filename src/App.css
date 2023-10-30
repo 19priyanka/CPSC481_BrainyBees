@@ -1,0 +1,11 @@
+body {
+    font-family: "Nunito Sans","Segoe UI",sans-serif;
+
+}
+
+input {
+    background-color: white !important;
+}
+.MuiInputBase-root {
+    background-color: white !important;
+}
