@@ -1,24 +1,45 @@
 import * as React from "react";
 import { useState,useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import "./Navbar.css";
 import Button from "@mui/material/Button";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
+import {useLocation} from "react-router"
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+
+import Menu from '@mui/material/Menu';
 
 // links should be an array of objects in this format {link:'link', name:'name'} handle change is how to handle the change in the language
 function Navbar() {
   const [userName,setUserName] = useState('')
+  const location = useLocation();
+  const dontShowRoutes = ['/','/homescreen']
+  
+
+  const [dontShowPages ,setDontShowPages] = useState(false);
+
+  const [showLogin,setShowLogin] = useState(true)
+  const [userElement, setUserElement] = useState(null);
+  const openUserMenu = (event) => {
+    setUserElement(event.currentTarget);
+  };
+
+  const logout = ()=> {
+    sessionStorage.removeItem("userName")
+    setUserName('')
+    setUserElement(null);
+  }
+
+  const settings = [{name : 'Profile', onclick: ()=>{navigate('/profile')}}, { name: "Logout", onclick: logout }];
 
 
+
+  const closeUserMenu = () => {
+    setUserElement(null);
+  };
   const pages = [
     {
       link:'/games',
@@ -31,22 +52,41 @@ function Navbar() {
     
   ]
 
+  const setLocalStorage = ()=>{
+    const userName = sessionStorage.getItem("userName")
+      if(userName !== null){
+        setUserName(userName)
+
+  }
+}
+
   useEffect(()=> {
     // could use local storage instead of session storage if we want it to persist after closing the browser
-    const userName = sessionStorage.getItem("userName")
-    if(userName !== null){
-      setUserName(userName)
-    }
-  
-  }, [])
+    //set timeout to fix weird bug
 
+    
+        setTimeout(()=>{
+
+       
+            console.log('new location: ', location)
+            setLocalStorage()
+            setShowLogin(location.pathname !== '/login')
+            setDontShowPages(dontShowRoutes.some((path) => location.pathname === path 
+            || (dontShowRoutes.includes(location.pathname) && path !== '/' )))
+        
+    },0)
   
+  
+  }, [dontShowRoutes, location])
+
+ 
 
   const navigate = useNavigate();
  
 
   return (
-    <AppBar className="banner" position="static">
+    <>
+  <AppBar className="banner" position="static">
       <div className="container navbarsplit">
         <Toolbar disableGutters>
           <Typography
@@ -94,7 +134,7 @@ function Navbar() {
           </Typography>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {!dontShowPages && pages.map((page) => (
               <Button
                 key={page.name}
                 onClick={()=>{navigate(page.link)}}
@@ -104,22 +144,56 @@ function Navbar() {
               </Button>
             ))}
           </Box>
-          
-          <Box sx={{ flexGrow: 0,mr:5}}>
+          { 
+          showLogin &&
+          (<><Box sx={{ flexGrow: 0,mr:5}}>
             {
 
               !userName ? 
               <Button
               onClick={()=>{navigate('/login')}}
               sx={{ my: 2, color: 'white', display: 'block' }}>Login</Button> :
-              <div>Welcome {userName} </div>
+              <div onClick={openUserMenu}>Welcome {userName} </div>
             }
           </Box>
+          <Menu
+              sx={{ mt: '2em' }}
+              anchorEl={userElement}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(userElement)}
+              onClose={closeUserMenu}
+            >
+              {settings.map((option) => (
+                <MenuItem key={option.name} onClick={option.onclick}>
+                  <Typography textAlign="center">{option.name}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          
+
+       
+            </>
+          
+          
+          )
+          }
+
+
           
         </Toolbar>
         
  </div>
     </AppBar>
+    
+    </>
   );
 }
 

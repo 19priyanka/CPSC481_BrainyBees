@@ -10,6 +10,7 @@ import LoopGames from './games/LoopGames';
 import ForloopGame from './games/loopGames/ForloopGame';
 import WhileLoopGame from './games/loopGames/WhileLoopGame';
 import Navbar from './Navbar';
+import LoginPage from './LoginPage';
 
 function App() {
   return (
@@ -19,18 +20,19 @@ function App() {
     <Router>
     <Navbar></Navbar>
       <Routes>
-      <Route path="/" element={<LandingPage />} />
       <Route path="/homescreen" element={<HomeScreen />} />
-      <Route path="/quizlanding" element={<QuizLanding />} />
-      <Route path="/quizloops" element={<QuizLoops />} />
-      <Route path="/quizpage" element={<QuizPage />} />
-      <Route path="/quizresults" element={<Results />} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/games" element={<GamesNavigationConcept />} />
       <Route path="/games/operators" element={<LoopGames />} />
       <Route path="/games/conditionals" element={<GamesNavigationConcept />} />
       <Route path="/games/loops" element={<LoopGames/>} />
       <Route path="/games/loops/forloopgame" element={<ForloopGame />} />
       <Route path="/games/loops/whileloopgame" element={<WhileLoopGame />} />
+      <Route path="/quizlanding" element={<QuizLanding />} />
+      <Route path="/quizloops" element={<QuizLoops />} />
+      <Route path="/quizpage" element={<QuizPage />} />
+      <Route path="/quizresults" element={<Results />} />
+      <Route path = '/login' element={<LoginPage/>}></Route>
       </Routes>
     </Router>
     </>
