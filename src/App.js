@@ -6,6 +6,8 @@ import QuizLanding from "./Quiz/QuizLanding";
 import QuizLoops from "./Quiz/QuizLoops";
 import QuizPage from "./Quiz/QuizPage";
 import Results from "./Quiz/Results";
+import PracticeProblemNavigation from "./PracticeProblems/PracticeProblemsNavigation";
+import LoopPracticeProblems from "./PracticeProblems/LoopPracticeProblems";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/quizloops" element={<QuizLoops />} />
         <Route path="/quizpage" element={<QuizPage />} />
         <Route path="/quizresults" element={<Results />} />
+        <Route path="/PracticeProblem" element={<PracticeProblemNavigation />} />
+        <Route path="/PracticeProblem/Loops" element={<LoopPracticeProblems />} />
       </Routes>
     </Router>
   );
