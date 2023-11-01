@@ -1,0 +1,54 @@
+.circle {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.game-container {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+}
+.red {
+    background-color: red;
+}
+.margin-top {
+    margin-top: 1em;
+}
+
+.margin-bottom {
+    margin-bottom: 1em;
+}
+
+.box {
+    border: 1px solid black;
+    padding:5px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.grid-box {
+    border: 1px solid black;
+    width: 5em;
+    height: 5em;
+
+}
+
+.footer {
+    display: flex;
+    flex-direction: row-reverse;
+}

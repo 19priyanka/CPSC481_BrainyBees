@@ -1,0 +1,31 @@
+.banner {
+    margin-bottom: 2em;
+    margin-left: -1em;
+    margin-right: -1em;
+    margin-top: -1em;
+    width: unset !important;
+
+}
+
+a:visited {
+    color: blue;
+}
+
+.container {
+    margin-left:2em;
+}
+
+.navbarsplit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-banner:hover {
+   background-color: #00008B;
+   cursor: pointer;
+   
+}
+
+.welcome-banner {
+    padding:5px
+}
