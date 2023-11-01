@@ -8,6 +8,7 @@ import QuizPage from "./Quiz/QuizPage";
 import Results from "./Quiz/Results";
 import PracticeProblemNavigation from "./PracticeProblems/PracticeProblemsNavigation";
 import LoopPracticeProblems from "./PracticeProblems/LoopPracticeProblems";
+import WhileLoopQuestions from "./PracticeProblems/WhileLoopQuestions";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/quizresults" element={<Results />} />
         <Route path="/PracticeProblem" element={<PracticeProblemNavigation />} />
         <Route path="/PracticeProblem/Loops" element={<LoopPracticeProblems />} />
+        <Route path="/PracticeProblems/Loops/WhileLoop" element={<WhileLoopQuestions />} />
+
       </Routes>
     </Router>
   );

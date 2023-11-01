@@ -1,9 +1,9 @@
 import * as React from "react";
 import GenericSelectionPage from "../GenericSelectionPage.jsx";
-function LoopPracticeProblems(props) {
+function WhileLoopQuestions(props) {
   //change this later, just an example right now
   const links = [
-    { link: "/PracticeProblems/Loops/WhileLoop", name: "While Loop" },
+    { link: "/PracticeProblems/Loops/WhileLoop/questions", name: "Question1" },
     { link: "/PracticeProblems/Loops/ForLoop", name: "For Loop" },
     { link: "/PracticeProblems/Loops/DoLoop", name: "Do Loop" },
     { link: "/PracticeProblems/Loops/NestedLoop", name: "Nested Loop" },
@@ -17,10 +17,10 @@ function LoopPracticeProblems(props) {
         handleChange={(value) => {
           console.log(value);
         }}
-        title="BrainyBees Loop Practice Problems"
+        title="BrainyBees While Loop Questions"
       />
     </>
   );
 }
 
-export default LoopPracticeProblems;
+export default WhileLoopQuestions;
