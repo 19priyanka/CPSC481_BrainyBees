@@ -20,6 +20,7 @@ function Navbar() {
   
 
   const [dontShowPages ,setDontShowPages] = useState(false);
+  const [currentPage, setCurrentPage] = useState(''); 
 
   const [showLogin,setShowLogin] = useState(true)
   const [userElement, setUserElement] = useState(null);
@@ -52,8 +53,6 @@ function Navbar() {
     
   ]
 
-  const [currentPage,setCurrentPage] = useState('')
-
   const setLocalStorage = ()=>{
     const userName = sessionStorage.getItem("userName")
       if(userName !== null){
@@ -67,14 +66,27 @@ function Navbar() {
     //set timeout to fix weird bug
 
     
-        setTimeout(()=>{
+    setTimeout(()=>{
 
+      // get current page
+    const current = window.location.pathname
+    let found = false;
+    pages.forEach((page)=> {
+      if(current.includes(page.link)) {
+        setCurrentPage(page.link)
+        found = true;
+      }
+    })
+    if(!found) {
+
+      setCurrentPage('')
+    }
        
-            console.log('new location: ', location)
-            setLocalStorage()
-            setShowLogin(location.pathname !== '/login')
-            setDontShowPages(dontShowRoutes.some((path) => location.pathname === path 
-            || (dontShowRoutes.includes(location.pathname) && path !== '/' )))
+    console.log('new location: ', location)
+    setLocalStorage()
+    setShowLogin(location.pathname !== '/login' && location.pathname !== '/signup')
+    setDontShowPages(dontShowRoutes.some((path) => location.pathname === path 
+    || (dontShowRoutes.includes(location.pathname) && path !== '/' )))
         
     },0)
   
@@ -167,14 +179,23 @@ function Navbar() {
             {
 
               !userName ? 
+              <div style={{display:'flex'}}>
+              
               <Button
               onClick={()=>{navigate('/login')}}
-              sx={{ '&:hover': { backgroundColor: '#00008B' }, my: 2, color: 'white', display: 'block' }}>Login</Button> :
-              <div>Welcome {userName} </div>
+              sx={{ my: 2, color: 'white', display: 'block' }}>Login</Button>
+              <Button
+              onClick={()=>{navigate('/signup')}}
+              sx={{ my: 2, color: 'white', display: 'block' }}>Sign Up</Button>
+              
+              
+               </div> :
+              <div className="welcome-banner" onClick={openUserMenu}>Welcome {userName} </div>
             }
           </Box>
           <Menu
-              sx={{ mt: '2em' }}
+              sx={{ mt: '2em',
+              }}
               anchorEl={userElement}
               anchorOrigin={{
                 vertical: 'top',

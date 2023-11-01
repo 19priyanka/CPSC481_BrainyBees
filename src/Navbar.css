@@ -8,7 +8,7 @@
 }
 
 a:visited {
-    color: white;
+    color: blue;
 }
 
 .container {
@@ -20,3 +20,12 @@ a:visited {
     justify-content: space-between;
 }
 
+.welcome-banner:hover {
+   background-color: #00008B;
+   cursor: pointer;
+   
+}
+
+.welcome-banner {
+    padding:5px
+}

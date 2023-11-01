@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import './games.css';
 import GenericSelectionPage from "../GenericSelectionPage.jsx"
 
 import ShowPath from '../Showpath';
@@ -14,12 +14,12 @@ function GamesNavigationConcept(props) {
     
 
     return (
-        <>
+        <div className='game-container'>
       <ShowPath></ShowPath>
 
       <GenericSelectionPage links={links} handleLanguageChange={(value)=> {console.log(value)}} title="Games" grid={true}/>
 
-    </>
+    </div>
     )
 }
 

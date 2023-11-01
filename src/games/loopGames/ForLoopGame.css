@@ -8,6 +8,11 @@
     cursor: pointer;
 }
 
+.game-container {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
 .description {
     display: flex;
     justify-content: space-between;

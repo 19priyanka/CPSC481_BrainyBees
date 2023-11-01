@@ -2,7 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import { useState } from "react";
-import { useNavigate} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import './LoginPage.css'
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -75,7 +75,7 @@ export default function LoginPage() {
           type='password'
           className={ passwordError && 'password-error'}
           label="Password"
-          helperText={ userNameError && 'Invalid Password'}
+          helperText={ passwordError && 'Invalid Password'}
 
           defaultValue=""
           sx={{minWidth:'15%'}}
@@ -84,9 +84,12 @@ export default function LoginPage() {
         />
         <Button sx={{maxWidth:'30%'}} type='submit' variant="contained">Login</Button>
         { invalidLogin && <p style={{color:'red', display:'block', marginTop:'10px', marginBottom:'10px'}}>Invalid login</p>}
+        <Link to='/signup'>Don't Have an account? Sign up</Link>
 
       </div>
+     
       </form>
+     
       </>
   )
 }

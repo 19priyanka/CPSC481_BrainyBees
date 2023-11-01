@@ -10,12 +10,12 @@ function OperatorGames(props) {
     
 
     return (
-        <>
+        <div className='game-container'>
       <ShowPath></ShowPath>
 
       <GenericSelectionPage links={links} handleLanguageChange={(value)=> {console.log(value)}} title="Operators"/>
 
-    </>
+    </div>
     )
 }
 

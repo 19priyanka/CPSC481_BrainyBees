@@ -23,7 +23,7 @@ function ForloopGame(props) {
 
 
     return (
-        <>
+        <div className='game-container'>
       <ShowPath></ShowPath>
       <h1>For Loop Game</h1>
      
@@ -61,7 +61,7 @@ function ForloopGame(props) {
         }
         </div>
         <div className="footer"><Button variant="text" onClick={() => navigate("/games/loops/whileloopgame")}>Next Game <ArrowForwardIcon></ArrowForwardIcon> </Button></div>
-    </>
+    </div>
     )
 }
 

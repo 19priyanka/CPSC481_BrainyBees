@@ -11,6 +11,7 @@ import ForloopGame from './games/loopGames/ForloopGame';
 import WhileLoopGame from './games/loopGames/WhileLoopGame';
 import Navbar from './Navbar';
 import LoginPage from './LoginPage';
+import SignupPage from './SignupPage';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       <Route path="/quizpage" element={<QuizPage />} />
       <Route path="/quizresults" element={<Results />} />
       <Route path = '/login' element={<LoginPage/>}></Route>
+      <Route path = '/signup' element={<SignupPage/>}></Route>
       </Routes>
     </Router>
     </>
