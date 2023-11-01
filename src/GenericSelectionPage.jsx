@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import { Autocomplete } from "@mui/material";
 import TextField from "@mui/material/TextField";
 // links should be an array of objects in this format {link:'link', name:'name'} handle change is how to handle the change in the language
-function GenericSelectionPage({ links, handleLanguageChange, title, grid }) {
+function GenericSelectionPage({ links, handleLanguageChange, title, grid, dontShowSearch }) {
   const navigate = useNavigate();
   const [search,setSearch] =  useState("");
   const [linksToDisplay, setLinksToDisplay] = useState(links);
@@ -42,7 +42,7 @@ function GenericSelectionPage({ links, handleLanguageChange, title, grid }) {
     <div className="center">
       <h1>{title}: {language}</h1>
       <div className="container">
-        <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={search || ''} onChange={(e)=> {searchChange(e)}} /></div>
+        {dontShowSearch && <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={search || ''} onChange={(e)=> {searchChange(e)}} /></div>}
        
         <div className={grid ? 'grid': 'list'}>
           {linksToDisplay.map((object, i) => (

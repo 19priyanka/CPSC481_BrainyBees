@@ -15,6 +15,7 @@ function HomeScreen(props) {
       <GenericSelectionPage
         links={links}
         grid={true}
+        dontShowSearch={true}
         handleLanguageChange={(value) => {
           console.log(value);
         }}
