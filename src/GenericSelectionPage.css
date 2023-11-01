@@ -10,9 +10,48 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   gap: 50%;
 }
 
+<<<<<<< HEAD
 .title {
   background-color: aqua;
+}
+=======
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center-vertical {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1em;
+}
+>>>>>>> main
+
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center-vertical {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1em;
 }
