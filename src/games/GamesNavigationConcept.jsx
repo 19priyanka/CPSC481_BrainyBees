@@ -7,9 +7,9 @@ import ShowPath from '../Showpath';
 function GamesNavigationConcept(props) {
    
     const links = [{link:'/games/operators',name:'Operators'},{link:'/games/conditionals',name:'Conditonals'},{link:'/games/loops',name:'Loops'}, 
-    {link:'/games',name:'Objects'} ,{link:'/games',name:'Pointers'},{link:'/games',name:'Memory'},
-    {link:'/games',name:'Variables'} ,{link:'/games',name:'File IO'},{link:'/games',name:'Constructors'},
-    {link:'/games',name:'Maps'} ,{link:'/games',name:'Vectors'},{link:'/games',name:'Inheritance'},
+    {link:'/games',name:'Object Oriented Programming'} ,{link:'/games',name:'Pointers'},{link:'/games',name:'Memory Management'},
+    {link:'/games',name:'Variables'} ,{link:'/games',name:'File IO'},{link:'/games',name:'C++ Templates'},
+    {link:'/games',name:'Maps Data Structure'} ,{link:'/games',name:'Array Data Structure'},{link:'/games',name:'C++ Strings'},
   ]
     
 

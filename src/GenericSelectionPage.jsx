@@ -47,7 +47,7 @@ function GenericSelectionPage({ links, handleLanguageChange, title, grid }) {
         <div className={grid ? 'grid': 'list'}>
           {linksToDisplay.map((object, i) => (
             <div className="list-item">
-              <Button style={{maxWidth: '11em', maxHeight: '3.5em', minWidth: '11em', minHeight: '3.5em'}} variant="contained" onClick={() => navigate(object.link)}>
+              <Button style={{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
                 {object.name}
               </Button>
             </div>
