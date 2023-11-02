@@ -7,6 +7,8 @@ import {
   FormLabel,
   Button,
 } from "@mui/material";
+import { Link } from "react-router-dom";
+import { textTransform } from "@mui/system";
 
 export default function Genericquestionsection({ questions }) {
   return (
@@ -51,7 +53,16 @@ export default function Genericquestionsection({ questions }) {
         );
       })}
       <Button style={{ background: "green" }} variant="contained">
-        SUBMIT
+        <Link
+          to="/quizresults"
+          style={{
+            textDecoration: "none",
+            textTransform: "none",
+            color: "white",
+          }}
+        >
+          SUBMIT
+        </Link>
       </Button>
     </>
   );
