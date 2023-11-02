@@ -1,0 +1,8 @@
+.login-page-container {
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    max-width: 100%;
+    align-items: center;
+}
+
