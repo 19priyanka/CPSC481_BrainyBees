@@ -1,5 +1,5 @@
-// VariablesPage.js
 import React from 'react';
+import ConditionalImage from './ConditionalStatements.png';
 
 function SupplementaryDocs() {
   return (
@@ -9,21 +9,21 @@ function SupplementaryDocs() {
           <button>Home</button>
         </div>
         <div className="top-center">
-          <h1>Variables</h1>
+          <h1 style={{ color: 'blue' }}>Supplementary Documents</h1>
         </div>
         <div className="top-right">
-          <p>Hello User</p>                         // Hardcode the user here.    
+          <p>Hello User</p>
           <button>Return to Lesson</button>
         </div>
       </header>
       <main>
         <div className="text-section">
-          <p>Here is some text about variables.</p>
+          <p>Here is some text about conditionals.</p>
         </div>
         <div className="image-section">
           <img
-            src="image.jpeg"                        // Put image URL here!
-            alt="Variable Example"
+            src={ConditionalImage} // Use the imported image variable
+            alt="ConditionalStatements"
           />
         </div>
       </main>
