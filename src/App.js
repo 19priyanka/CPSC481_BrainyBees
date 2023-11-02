@@ -34,8 +34,8 @@ function App() {
           <Route path="/homescreen" element={<HomeScreen />} />
           <Route path="/Quizzes" element={<QuizLanding />} />
           <Route path="/Quizzes/Loops" element={<QuizLoops />} />
-          <Route path="/Quizzes/Loops/Forloopquiz" element={<QuizPage />} />
-          <Route path="/Quizzes/Loops/Forloopquiz/Results" element={<Results />} />
+          <Route path="/Quizzes/Loops/ForLoopQuiz" element={<QuizPage />} />
+          <Route path="/Quizzes/Loops/ForLoopQuiz/Results" element={<Results />} />
           <Route
             path="/PracticeProblems"
             element={<PracticeProblemNavigation />}

@@ -53,7 +53,7 @@ export default function Genericquestionsection({ questions }) {
       })}
       <Button style={{ background: "green" }} variant="contained">
         <Link
-          to="/Quizzes/Loops/Forloopquiz/Results"
+          to="/Quizzes/Loops/ForLoopQuiz/Results"
           style={{
             textDecoration: "none",
             textTransform: "none",
