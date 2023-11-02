@@ -29,17 +29,29 @@ function App() {
     
     <Router>
     <Navbar></Navbar>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/homescreen" element={<HomeScreen />} />
-        <Route path="/quizlanding" element={<QuizLanding />} />
-        <Route path="/quizloops" element={<QuizLoops />} />
-        <Route path="/quizpage" element={<QuizPage />} />
-        <Route path="/quizresults" element={<Results />} />
-        <Route path="/PracticeProblems" element={<PracticeProblemNavigation />} />
-        <Route path="/PracticeProblems/Loops" element={<LoopPracticeProblems />} />
-        <Route path="/PracticeProblems/Loops/WhileLoop" element={<WhileLoopQuestions />} />
-        <Route path="/PracticeProblems/Loops/WhileLoop/WhileLoopSolutions" element={<WhileLoopSolutions />} />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/homescreen" element={<HomeScreen />} />
+          <Route path="/Quizzes" element={<QuizLanding />} />
+          <Route path="/Quizzes/Loops" element={<QuizLoops />} />
+          <Route path="/Quizzes/Loops/Forloopquiz" element={<QuizPage />} />
+          <Route path="/Quizzes/Loops/Forloopquiz/Results" element={<Results />} />
+          <Route
+            path="/PracticeProblems"
+            element={<PracticeProblemNavigation />}
+          />
+          <Route
+            path="/PracticeProblems/Loops"
+            element={<LoopPracticeProblems />}
+          />
+          <Route
+            path="/PracticeProblems/Loops/WhileLoop"
+            element={<WhileLoopQuestions />}
+          />
+          <Route
+            path="/PracticeProblems/Loops/WhileLoop/WhileLoopSolutions"
+            element={<WhileLoopSolutions />}
+          />
 
           <Route path="/games" element={<GamesNavigationConcept />} />
           <Route path="/games/operators" element={<LoopGames />} />

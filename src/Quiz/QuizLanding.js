@@ -4,9 +4,9 @@ import ShowPath from "../Showpath";
 
 export default function QuizLanding() {
   const links = [
-    { link: "/Loops", name: "Loops" },
-    { link: "/", name: "Variables" },
-    { link: "/", name: "Conditionals" },
+    { link: "/Quizzes/Loops", name: "Loops" },
+    { link: "/Quizzes", name: "Variables" },
+    { link: "/Quizzes", name: "Conditionals" },
   ];
   return (
     <>
