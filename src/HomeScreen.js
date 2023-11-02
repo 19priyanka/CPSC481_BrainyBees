@@ -3,10 +3,9 @@ import GenericSelectionPage from "./GenericSelectionPage.jsx";
 function HomeScreen(props) {
   //change this later, just an example right now
   //change this later, just an example right now
+  //change this later, just an example right now
   const links = [
-    { link: "/homescreen", name: "Test1" },
-    { link: "/landingpage", name: "Test2" },
-    { link: "/PracticeProblem", name: "Practise Problems" },
+    { link: "/PracticeProblems", name: "Practise Problems" },
     { link: "/Quizzes", name: "Quiz Landing" },
     { link: "/games", name: "Games" },
     { link: "/lessons", name: "Lessons" },

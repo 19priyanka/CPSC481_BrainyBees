@@ -47,7 +47,7 @@ function Navbar() {
       name:'Games'
     },
     {
-      link:'/quizzes',
+      link:'/Quizzes',
       name:'Quizzes'
     },
     {
@@ -55,7 +55,7 @@ function Navbar() {
       name:'Lessons'
     },
     {
-      link:'/practiceproblems',
+      link:'/PracticeProblems',
       name:'Practice Problems'
     },
     {

@@ -22,6 +22,7 @@ function ShowPath(props) {
         pathArray.pop();
         pathArray.shift();
         // formats it with the link, and the name of the page. example would be {link:'/games/operators/arthimeticOperators',name:'Operators'}
+        setPath([]);
         let linkObjArray = [];
 
          pathArray.forEach((name,index) => {
@@ -29,7 +30,12 @@ function ShowPath(props) {
             if(index !== 0){
                 link = linkObjArray[index-1].link + link;
             }
-            linkObjArray.push({link,name});
+            const match = name.match(/[A-Z][a-z]+|[0-9]+/g)
+            let nameSplitByCaptials = name;
+            if(match !== null){
+             nameSplitByCaptials = match.join(' ');
+            }
+            linkObjArray.push({link,name:nameSplitByCaptials});
         })
         setPath(linkObjArray);
         },0)
