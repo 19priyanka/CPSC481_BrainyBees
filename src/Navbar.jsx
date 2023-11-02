@@ -50,6 +50,18 @@ function Navbar() {
       link:'/quizzes',
       name:'Quizzes'
     },
+    {
+      link:'/lessons',
+      name:'Lessons'
+    },
+    {
+      link:'/practiceproblems',
+      name:'Practice Problems'
+    },
+    {
+      link:'/supplementarydocuments',
+      name:'Supplementary Documents'
+    },
     
   ]
 
