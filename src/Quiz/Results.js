@@ -1,6 +1,7 @@
 import React from "react";
 import Genericresultsection from "./Genericresultsection";
 import { CircularProgress } from "@mui/material";
+import ShowPath from "../Showpath";
 import { red } from "@mui/material/colors";
 import { bottom } from "@popperjs/core";
 
@@ -42,6 +43,7 @@ export default function Results() {
   ];
   return (
     <>
+      <ShowPath></ShowPath>
       <h1 style={{ color: "blue" }}>RESULTS</h1>
       <div
         style={{

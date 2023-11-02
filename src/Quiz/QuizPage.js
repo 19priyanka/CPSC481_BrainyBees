@@ -1,5 +1,6 @@
 import React from "react";
 import Genericquestionsection from "./Genericquestionsection";
+import ShowPath from "../Showpath";
 
 export default function QuizPage() {
   const loopQns = [
@@ -33,6 +34,7 @@ export default function QuizPage() {
   ];
   return (
     <>
+      <ShowPath></ShowPath>
       <h1 style={{ color: "blue" }}>LOOPS</h1>
       <Genericquestionsection questions={loopQns} />;
     </>

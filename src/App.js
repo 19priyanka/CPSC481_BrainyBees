@@ -6,16 +6,16 @@ import PracticeProblemNavigation from "./PracticeProblems/PracticeProblemsNaviga
 import LoopPracticeProblems from "./PracticeProblems/LoopPracticeProblems";
 import WhileLoopQuestions from "./PracticeProblems/WhileLoopQuestions";
 import WhileLoopSolutions from "./PracticeProblems/WhileLoopSolutions";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './LandingPage';
-import HomeScreen from './HomeScreen'; // Import HomeScreen or other components
-import GamesNavigationConcept from './games/GamesNavigationConcept';
-import LoopGames from './games/LoopGames';
-import ForloopGame from './games/loopGames/ForloopGame';
-import WhileLoopGame from './games/loopGames/WhileLoopGame';
-import Navbar from './Navbar';
-import LoginPage from './LoginPage';
-import SignupPage from './SignupPage';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LandingPage from "./LandingPage";
+import HomeScreen from "./HomeScreen"; // Import HomeScreen or other components
+import GamesNavigationConcept from "./games/GamesNavigationConcept";
+import LoopGames from "./games/LoopGames";
+import ForloopGame from "./games/loopGames/ForloopGame";
+import WhileLoopGame from "./games/loopGames/WhileLoopGame";
+import Navbar from "./Navbar";
+import LoginPage from "./LoginPage";
+import SignupPage from "./SignupPage";
 
 function App() {
   return (
@@ -24,28 +24,46 @@ function App() {
     
     <Router>
     <Navbar></Navbar>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/homescreen" element={<HomeScreen />} />
-        <Route path="/quizlanding" element={<QuizLanding />} />
-        <Route path="/quizloops" element={<QuizLoops />} />
-        <Route path="/quizpage" element={<QuizPage />} />
-        <Route path="/quizresults" element={<Results />} />
-        <Route path="/PracticeProblems" element={<PracticeProblemNavigation />} />
-        <Route path="/PracticeProblems/Loops" element={<LoopPracticeProblems />} />
-        <Route path="/PracticeProblems/Loops/WhileLoop" element={<WhileLoopQuestions />} />
-        <Route path="/PracticeProblems/Loops/WhileLoop/WhileLoopSolutions" element={<WhileLoopSolutions />} />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/homescreen" element={<HomeScreen />} />
+          <Route path="/Quizzes" element={<QuizLanding />} />
+          <Route path="/Quizzes/Loops" element={<QuizLoops />} />
+          <Route path="/Quizzes/Loops/ForLoopQuiz" element={<QuizPage />} />
+          <Route path="/Quizzes/Loops/ForLoopQuiz/Results" element={<Results />} />
+          <Route
+            path="/PracticeProblems"
+            element={<PracticeProblemNavigation />}
+          />
+          <Route
+            path="/PracticeProblems/Loops"
+            element={<LoopPracticeProblems />}
+          />
+          <Route
+            path="/PracticeProblems/Loops/WhileLoop"
+            element={<WhileLoopQuestions />}
+          />
+          <Route
+            path="/PracticeProblems/Loops/WhileLoop/WhileLoopSolutions"
+            element={<WhileLoopSolutions />}
+          />
 
-      <Route path="/games" element={<GamesNavigationConcept />} />
-      <Route path="/games/operators" element={<LoopGames />} />
-      <Route path="/games/conditionals" element={<GamesNavigationConcept />} />
-      <Route path="/games/loops" element={<LoopGames/>} />
-      <Route path="/games/loops/forloopgame" element={<ForloopGame />} />
-      <Route path="/games/loops/whileloopgame" element={<WhileLoopGame />} />
-      <Route path = '/login' element={<LoginPage/>}></Route>
-      <Route path = '/signup' element={<SignupPage/>}></Route>
-      </Routes>
-    </Router>
+          <Route path="/games" element={<GamesNavigationConcept />} />
+          <Route path="/games/operators" element={<LoopGames />} />
+          <Route
+            path="/games/conditionals"
+            element={<GamesNavigationConcept />}
+          />
+          <Route path="/games/loops" element={<LoopGames />} />
+          <Route path="/games/loops/forloopgame" element={<ForloopGame />} />
+          <Route
+            path="/games/loops/whileloopgame"
+            element={<WhileLoopGame />}
+          />
+          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/signup" element={<SignupPage />}></Route>
+        </Routes>
+      </Router>
     </>
   );
 }

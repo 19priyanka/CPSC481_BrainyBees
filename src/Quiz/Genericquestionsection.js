@@ -8,7 +8,6 @@ import {
   Button,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { textTransform } from "@mui/system";
 
 export default function Genericquestionsection({ questions }) {
   return (
@@ -54,7 +53,7 @@ export default function Genericquestionsection({ questions }) {
       })}
       <Button style={{ background: "green" }} variant="contained">
         <Link
-          to="/quizresults"
+          to="/Quizzes/Loops/ForLoopQuiz/Results"
           style={{
             textDecoration: "none",
             textTransform: "none",
