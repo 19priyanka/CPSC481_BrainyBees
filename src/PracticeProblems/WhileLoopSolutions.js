@@ -1,5 +1,6 @@
 import React from "react";
 import WhileLoopSolutionsSection from "./WhileLoopSolutionsSection";
+import ShowPath from "../Showpath.jsx"
 
 export default function WhileLoopSolutions() {
   const loopQns = [
@@ -28,6 +29,7 @@ export default function WhileLoopSolutions() {
   ];
   return (
     <>
+      <ShowPath></ShowPath>
       <h1 style={{ color: "blue" }}>WHILE LOOPS SOLUTIONS</h1>
       <WhileLoopSolutionsSection questions={loopQns} />;
     </>

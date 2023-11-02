@@ -1,22 +1,23 @@
 import * as React from "react";
 import GenericSelectionPage from "../GenericSelectionPage.jsx";
+import ShowPath from "../Showpath.jsx"
+
 function PracticeProblemNavigation(props) {
   //change this later, just an example right now
   const links = [
-    { link: "/PracticeProblem/Loops", name: "Loops" },
-    { link: "/PracticeProblem/Variables", name: "Variables" },
-    { link: "/PracticeProblem/Conditionals", name: "Conditionals" },
-    { link: "/landingpage", name: "Test2" },
-    { link: "/genericselectionpage", name: "Test3" },
+    { link: "/PracticeProblems/Loops", name: "Loops" },
+    { link: "/PracticeProblems/Variables", name: "Variables" },
+    { link: "/PracticeProblems/Conditionals", name: "Conditionals" },
   ];
   return (
     <>
+      <ShowPath></ShowPath>
       <GenericSelectionPage
         links={links}
         handleChange={(value) => {
           console.log(value);
         }}
-        title="BrainyBees PracticeProblemNavigation"
+        title="BrainyBees Practice Problem Navigation"
       />
     </>
   );

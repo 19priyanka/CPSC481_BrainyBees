@@ -6,7 +6,7 @@ function HomeScreen(props) {
   const links = [
     { link: "/homescreen", name: "Test1" },
     { link: "/landingpage", name: "Test2" },
-    { link: "/PracticeProblem", name: "Practise Problems" },
+    { link: "/PracticeProblems", name: "Practise Problems" },
     { link: "/quizlanding", name: "Quiz Landing" },
     { link: "/games", name: "Games" },
     { link: "/Lessons", name: "Lessons" },
