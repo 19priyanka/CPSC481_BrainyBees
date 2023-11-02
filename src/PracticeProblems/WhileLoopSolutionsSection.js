@@ -13,7 +13,7 @@ export default function WhileLoopSolutionsSection({ questions }) {
     <>
       {questions.map((question) => {
         return (
-          <div>
+          <div style={{width:'40%'}}>
             <FormControl>
               <FormLabel id="demo-radio-buttons-group-label">
                 {question.question}
@@ -30,6 +30,7 @@ export default function WhileLoopSolutionsSection({ questions }) {
                 />
               </RadioGroup>
             </FormControl>
+            <code style = {{display:'block'}}>{question.solution} </code>
             <br />
             <br />
             <br />
