@@ -9,7 +9,7 @@ function HomeScreen(props) {
     { link: "/PracticeProblem", name: "Practise Problems" },
     { link: "/quizlanding", name: "Quiz Landing" },
     { link: "/games", name: "Games" },
-    { link: "/lessons", name: "Lessons" },
+    { link: "/Lessons", name: "Lessons" },
     { link: "/supplmentarydocs", name: "Supplementary docs" },
   ];
   return (

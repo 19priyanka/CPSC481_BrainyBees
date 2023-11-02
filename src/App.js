@@ -17,6 +17,11 @@ import Navbar from './Navbar';
 import LoginPage from './LoginPage';
 import SignupPage from './SignupPage';
 
+import LessonsLanding from "./Lessons/LessonsLanding";
+import LessonsLoops from "./Lessons/LessonsLoops";
+import LessonsLoopsForLoop from "./Lessons/LessonLoopsForLoop";
+import LessonsLoopsWhileLoop from "./Lessons/LessonLoopsWhileLoop";
+
 function App() {
   return (
     <>
@@ -44,6 +49,12 @@ function App() {
       <Route path="/games/loops/whileloopgame" element={<WhileLoopGame />} />
       <Route path = '/login' element={<LoginPage/>}></Route>
       <Route path = '/signup' element={<SignupPage/>}></Route>
+
+
+      <Route path="/Lessons" element={<LessonsLanding />} />
+      <Route path="/Lessons/Loops" element={<LessonsLoops />} />
+      <Route path="/Lessons/Loops/ForLoop" element={<LessonsLoopsForLoop />} />
+      <Route path="/Lessons/Loops/WhileLoop" element={<LessonsLoopsWhileLoop />} />
       </Routes>
     </Router>
     </>
