@@ -53,22 +53,28 @@ function App() {
             element={<WhileLoopSolutions />}
           />
 
-      <Route path="/games" element={<GamesNavigationConcept />} />
-      <Route path="/games/operators" element={<LoopGames />} />
-      <Route path="/games/conditionals" element={<GamesNavigationConcept />} />
-      <Route path="/games/loops" element={<LoopGames/>} />
-      <Route path="/games/loops/forloopgame" element={<ForloopGame />} />
-      <Route path="/games/loops/whileloopgame" element={<WhileLoopGame />} />
-      <Route path = '/login' element={<LoginPage/>}></Route>
-      <Route path = '/signup' element={<SignupPage/>}></Route>
-
+          <Route path="/games" element={<GamesNavigationConcept />} />
+          <Route path="/games/operators" element={<LoopGames />} />
+          <Route
+            path="/games/conditionals"
+            element={<GamesNavigationConcept />}
+          />
+          <Route path="/games/loops" element={<LoopGames />} />
+          <Route path="/games/loops/forloopgame" element={<ForloopGame />} />
+          <Route
+            path="/games/loops/whileloopgame"
+            element={<WhileLoopGame />}
+          />
+          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/signup" element={<SignupPage />}></Route>
+  
 
       <Route path="/Lessons" element={<LessonsLanding />} />
       <Route path="/Lessons/Loops" element={<LessonsLoops />} />
       <Route path="/Lessons/Loops/ForLoop" element={<LessonsLoopsForLoop />} />
       <Route path="/Lessons/Loops/WhileLoop" element={<LessonsLoopsWhileLoop />} />
       </Routes>
-    </Router>
+      </Router>
     </>
   );
 }
