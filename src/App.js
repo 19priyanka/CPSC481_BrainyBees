@@ -6,16 +6,16 @@ import PracticeProblemNavigation from "./PracticeProblems/PracticeProblemsNaviga
 import LoopPracticeProblems from "./PracticeProblems/LoopPracticeProblems";
 import WhileLoopQuestions from "./PracticeProblems/WhileLoopQuestions";
 import WhileLoopSolutions from "./PracticeProblems/WhileLoopSolutions";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './LandingPage';
-import HomeScreen from './HomeScreen'; // Import HomeScreen or other components
-import GamesNavigationConcept from './games/GamesNavigationConcept';
-import LoopGames from './games/LoopGames';
-import ForloopGame from './games/loopGames/ForloopGame';
-import WhileLoopGame from './games/loopGames/WhileLoopGame';
-import Navbar from './Navbar';
-import LoginPage from './LoginPage';
-import SignupPage from './SignupPage';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LandingPage from "./LandingPage";
+import HomeScreen from "./HomeScreen"; // Import HomeScreen or other components
+import GamesNavigationConcept from "./games/GamesNavigationConcept";
+import LoopGames from "./games/LoopGames";
+import ForloopGame from "./games/loopGames/ForloopGame";
+import WhileLoopGame from "./games/loopGames/WhileLoopGame";
+import Navbar from "./Navbar";
+import LoginPage from "./LoginPage";
+import SignupPage from "./SignupPage";
 
 import LessonsLanding from "./Lessons/LessonsLanding";
 import LessonsLoops from "./Lessons/LessonsLoops";
@@ -41,22 +41,27 @@ function App() {
         <Route path="/PracticeProblems/Loops/WhileLoop" element={<WhileLoopQuestions />} />
         <Route path="/PracticeProblems/Loops/WhileLoop/WhileLoopSolutions" element={<WhileLoopSolutions />} />
 
-      <Route path="/games" element={<GamesNavigationConcept />} />
-      <Route path="/games/operators" element={<LoopGames />} />
-      <Route path="/games/conditionals" element={<GamesNavigationConcept />} />
-      <Route path="/games/loops" element={<LoopGames/>} />
-      <Route path="/games/loops/forloopgame" element={<ForloopGame />} />
-      <Route path="/games/loops/whileloopgame" element={<WhileLoopGame />} />
-      <Route path = '/login' element={<LoginPage/>}></Route>
-      <Route path = '/signup' element={<SignupPage/>}></Route>
-
-
-      <Route path="/Lessons" element={<LessonsLanding />} />
+          <Route path="/games" element={<GamesNavigationConcept />} />
+          <Route path="/games/operators" element={<LoopGames />} />
+          <Route
+            path="/games/conditionals"
+            element={<GamesNavigationConcept />}
+          />
+          <Route path="/games/loops" element={<LoopGames />} />
+          <Route path="/games/loops/forloopgame" element={<ForloopGame />} />
+          <Route
+            path="/games/loops/whileloopgame"
+            element={<WhileLoopGame />}
+          />
+          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/signup" element={<SignupPage />}></Route>
+          
+          <Route path="/Lessons" element={<LessonsLanding />} />
       <Route path="/Lessons/Loops" element={<LessonsLoops />} />
       <Route path="/Lessons/Loops/ForLoop" element={<LessonsLoopsForLoop />} />
       <Route path="/Lessons/Loops/WhileLoop" element={<LessonsLoopsWhileLoop />} />
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
     </>
   );
 }
