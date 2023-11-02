@@ -7,8 +7,6 @@ function LoopPracticeProblems(props) {
     { link: "/PracticeProblems/Loops/ForLoop", name: "For Loop" },
     { link: "/PracticeProblems/Loops/DoLoop", name: "Do Loop" },
     { link: "/PracticeProblems/Loops/NestedLoop", name: "Nested Loop" },
-    { link: "/landingpage", name: "Test2" },
-    { link: "/genericselectionpage", name: "Test3" },
   ];
   return (
     <>

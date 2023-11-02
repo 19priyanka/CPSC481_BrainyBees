@@ -5,6 +5,7 @@ import Results from "./Quiz/Results";
 import PracticeProblemNavigation from "./PracticeProblems/PracticeProblemsNavigation";
 import LoopPracticeProblems from "./PracticeProblems/LoopPracticeProblems";
 import WhileLoopQuestions from "./PracticeProblems/WhileLoopQuestions";
+import WhileLoopSolutions from "./PracticeProblems/WhileLoopSolutions";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './LandingPage';
 import HomeScreen from './HomeScreen'; // Import HomeScreen or other components
@@ -33,6 +34,7 @@ function App() {
         <Route path="/PracticeProblem" element={<PracticeProblemNavigation />} />
         <Route path="/PracticeProblem/Loops" element={<LoopPracticeProblems />} />
         <Route path="/PracticeProblems/Loops/WhileLoop" element={<WhileLoopQuestions />} />
+        <Route path="/PracticeProblems/Loops/WhileLoop/WhileLoopSolutions" element={<WhileLoopSolutions />} />
 
       <Route path="/games" element={<GamesNavigationConcept />} />
       <Route path="/games/operators" element={<LoopGames />} />

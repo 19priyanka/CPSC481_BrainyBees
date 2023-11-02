@@ -14,11 +14,9 @@
   gap: 50%;
 }
 
-<<<<<<< HEAD
 .title {
   background-color: aqua;
 }
-=======
 
 .center {
   display: flex;
@@ -36,7 +34,6 @@
   grid-template-columns: auto auto auto;
   grid-gap: 1em;
 }
->>>>>>> main
 
 
 .center {
