@@ -51,7 +51,7 @@ function Navbar() {
       name:'Quizzes'
     },
     {
-      link:'/lessons',
+      link:'/Lessons',
       name:'Lessons'
     },
     {
