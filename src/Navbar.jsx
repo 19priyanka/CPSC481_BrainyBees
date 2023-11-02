@@ -112,7 +112,6 @@ function Navbar() {
         setCurrentPage(page.link)
       }
     })
-    debugger
   
   }, [dontShowRoutes, location])
 
