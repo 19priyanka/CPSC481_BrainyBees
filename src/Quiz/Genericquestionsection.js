@@ -8,7 +8,6 @@ import {
   Button,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { textTransform } from "@mui/system";
 
 export default function Genericquestionsection({ questions }) {
   return (
