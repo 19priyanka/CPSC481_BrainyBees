@@ -31,8 +31,8 @@ function App() {
         <Route path="/quizloops" element={<QuizLoops />} />
         <Route path="/quizpage" element={<QuizPage />} />
         <Route path="/quizresults" element={<Results />} />
-        <Route path="/PracticeProblem" element={<PracticeProblemNavigation />} />
-        <Route path="/PracticeProblem/Loops" element={<LoopPracticeProblems />} />
+        <Route path="/PracticeProblems" element={<PracticeProblemNavigation />} />
+        <Route path="/PracticeProblems/Loops" element={<LoopPracticeProblems />} />
         <Route path="/PracticeProblems/Loops/WhileLoop" element={<WhileLoopQuestions />} />
         <Route path="/PracticeProblems/Loops/WhileLoop/WhileLoopSolutions" element={<WhileLoopSolutions />} />
 
