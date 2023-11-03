@@ -12,7 +12,7 @@ import PieChart from './ProfilePagePieChart';
 import ProgressBar from './ProfilePageProgessBar';
 
 const UserProfile = () => {
-  const [fullName, setFullName] = useState('Ben Dover');
+  const [fullName, setFullName] = useState('Ben Johnson');
   const [email, setEmail] = useState('ben@example.com');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -32,7 +32,7 @@ const UserProfile = () => {
   return (
     <Container maxWidth="md">
       <Typography variant="h4" gutterBottom>
-        Ben Dover's Profile
+        Ben Johnson's Profile
       </Typography>
 
       <Grid container spacing={2}>
