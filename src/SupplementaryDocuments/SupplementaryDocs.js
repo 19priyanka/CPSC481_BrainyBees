@@ -29,7 +29,7 @@ function SupplementaryDocs() {
       </header>
       <main>
         <div className="text-section">
-          <p>Conditionals help guide us down a path using questions to help us figure out what to do.</p>
+          <p>What is a conditional: Conditionals guide us down a path using questions to help us figure out what to do.</p>
         </div>
         <div className="image-section">
           <img src={ConditionalImage} alt="ConditionalStatements" />

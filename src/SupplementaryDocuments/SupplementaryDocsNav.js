@@ -34,14 +34,7 @@ function SupplementaryDocsNav(props) {
         >
           Loops
         </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate(-1)}
-          style={{ width: '200px' }} // Set the button width as desired
-        >
-          Back
-        </Button>
+        
       </div>
     </>
   );
