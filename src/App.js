@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './LandingPage';
 import HomeScreen from './HomeScreen';
-import SupplementaryDocsNav from './SupplementaryDocsNav';
-import SupplementaryDocs from './SupplementaryDocs';
+import SupplementaryDocsNav from './SupplementaryDocuments/SupplementaryDocsNav';
+import SupplementaryDocs from './SupplementaryDocuments/SupplementaryDocs';
 
 function App() {
   return (
