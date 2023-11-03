@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom"
-import {Grid, Stack, Divider} from '@mui/material';
+import {Grid, Paper} from '@mui/material';
 import './LandingPage.css';
 import FancyBeeFacingLeft from '../bee_icon/png/FancyBeeFacingLeft.png';
 import FancyBeeFacingRight from '../bee_icon/png/FancyBeeFacingRight.png';
@@ -10,8 +10,6 @@ export default function LandingPage(props) {
 
   return (
 <>
-    {/* <h1 style={{color:"blue"}}>landingPage</h1>  */}
-    <button onClick={()=>navigate("/homescreen")}>Homescreen</button>
     <Grid container spacing={1} className="header">
       <Grid container spacing={1} >
         <Grid item xs={2} className="beeIconFacingRight">
@@ -28,15 +26,36 @@ export default function LandingPage(props) {
           Where Learning Takes Flight
             </em> </h1>
           </Grid>
-      <Stack direction="row" spacing={2}  divider={<Divider orientation="vertical" flexItem />}>
-        <Stack item>
-        <div className="circle">
-        <p>Text 1</p>
+          <Grid item xs={12} >
+     </Grid>
+        <Grid container spacing={3}>
+        <Grid item xs={4}>
+        <div className='paperContainer' > 
+        <Paper  onClick={() => navigate("/homescreen")} elevation={3} className='paper' >
+          <h1>Java</h1>
+        </Paper>
+        </div>
+        </Grid>
+        <Grid item xs={4}>
+        <div className='paperContainer' > 
+        <Paper  onClick={() => navigate("/homescreen")} elevation={3} className='paper'>
+        <h1>C++</h1>
+        </Paper>
+        </div>
+        </Grid>
+        <Grid item xs={4}>
+        <div className='paperContainer' > 
+        <Paper  onClick={() => navigate("/homescreen")} elevation={3} className='paper'>
+        <h1>Python</h1>
+        </Paper>
         </div>
         
-        </Stack>
-      </Stack>
+        </Grid>
+       
 
+      </Grid>
+
+ 
       </Grid>
 
     </Grid>

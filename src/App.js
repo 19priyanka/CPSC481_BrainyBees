@@ -7,8 +7,8 @@ import LoopPracticeProblems from "./PracticeProblems/LoopPracticeProblems";
 import WhileLoopQuestions from "./PracticeProblems/WhileLoopQuestions";
 import WhileLoopSolutions from "./PracticeProblems/WhileLoopSolutions";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LandingPage from "./LandingPage";
-import HomeScreen from "./HomeScreen"; // Import HomeScreen or other components
+import LandingPage from "./LandingPage/LandingPage";
+import HomeScreen from "./HomeScreen/HomeScreen"; // Import HomeScreen or other components
 import GamesNavigationConcept from "./games/GamesNavigationConcept";
 import LoopGames from "./games/LoopGames";
 import ForloopGame from "./games/loopGames/ForloopGame";
@@ -26,7 +26,6 @@ function App() {
   return (
     <>
    
-    
     <Router>
     <Navbar></Navbar>
         <Routes>
