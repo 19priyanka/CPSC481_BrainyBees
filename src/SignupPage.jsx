@@ -10,10 +10,13 @@ export default function SignupPage() {
    
   const [userName,setUserName] = useState('')
   const [password,setPassword] = useState('')
+  const [fullName,setFullName] = useState('')
+
   const [userNameError,setUserNameError] = useState(false)
   const [passwordError,setPasswordError] = useState(false)
   const [email,setEmail] = useState('')
   const [emailError,setEmailError] = useState(false)
+  const [fullNameError,setFullNameError] = useState(false)
   const setInput = (field,e) => {
     if(field === 'username') {
       setUserName(e.target.value)
@@ -23,6 +26,9 @@ export default function SignupPage() {
     }
     else if(field === 'email') {
         setEmail(e.target.value)
+    }
+    else if(field === 'fullname'){
+      setEmail(e.target.value)
     }
   }
 
@@ -38,12 +44,29 @@ export default function SignupPage() {
     if(email === ''){
         setEmailError(true)
     }
+
+    if(fullName === ''){
+      setFullNameError(true)
+    }
 }
     return (
         <>
         <form onSubmit={submit}>
         <div className='login-page-container'>
           <h1>Sign Up Page</h1>
+          <TextField
+              error={fullNameError} 
+              value = {fullName}
+              label="Full Name"
+              defaultValue=""
+              helperText={ fullNameError && 'Invalid name'}
+    
+              className={ fullNameError && 'outlined-error'}
+              required
+              sx={{minWidth:'15%'}}
+              onChange={(e) => setInput('fullname',e)}
+    
+            />
             <TextField
               error={userNameError} 
               value = {userName}

@@ -21,6 +21,7 @@ import LessonsLanding from "./Lessons/LessonsLanding";
 import LessonsLoops from "./Lessons/LessonsLoops";
 import LessonsLoopsForLoop from "./Lessons/LessonLoopsForLoop";
 import LessonsLoopsWhileLoop from "./Lessons/LessonLoopsWhileLoop";
+import UserProfile from "./Profile";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
             element={<WhileLoopGame />}
           />
           <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/profile" element={<UserProfile />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
   
 
@@ -72,6 +74,9 @@ function App() {
       <Route path="/Lessons/Loops" element={<LessonsLoops />} />
       <Route path="/Lessons/Loops/ForLoop" element={<LessonsLoopsForLoop />} />
       <Route path="/Lessons/Loops/WhileLoop" element={<LessonsLoopsWhileLoop />} />
+
+
+
       </Routes>
       </Router>
     </>
