@@ -22,6 +22,7 @@ import LessonsLoops from "./Lessons/LessonsLoops";
 import LessonsLoopsForLoop from "./Lessons/LessonLoopsForLoop";
 import LessonsLoopsWhileLoop from "./Lessons/LessonLoopsWhileLoop";
 import UserProfile from "./Profile";
+import SideBar from "./SideBar";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
    
     <Router>
     <Navbar></Navbar>
+    <SideBar></SideBar>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/homescreen" element={<HomeScreen />} />
