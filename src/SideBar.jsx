@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import { Drawer } from '@mui/material'
 import Divider from '@mui/material'
 import ListSubheader from '@mui/material/ListSubheader';
@@ -9,6 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import {useLocation} from "react-router"
 
 
 import SidebarItem from './SidebarItem';
@@ -16,7 +18,32 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 function SideBar() {
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = useState(false);
+    const location = useLocation();
+    const [currentPage, setCurrentPage] = useState('');
+    const dontShowRoutes = ['/','/homescreen']
+
+    useEffect(()=> {
+        // could use local storage instead of session storage if we want it to persist after closing the browser
+        //set timeout to fix weird bug
+        debugger
+        
+        setTimeout(()=>{
+    
+          // get current page
+        const current = window.location.pathname
+        if(currentPage !== current){
+            setCurrentPage(current)
+            setOpen(false)
+        }
+        let found = false;
+        
+       
+            
+        },0)
+      
+       
+      }, [dontShowRoutes, location])
 
 
   const handleDrawerOpen = () => {
@@ -26,10 +53,10 @@ function SideBar() {
     const sideBarItems = [
         {
             label:'Lessons',
-            link:'/Lessons',
             children:[
                 {
                     label:'Loops',
+                    link:'/Lessons/Loops',
                     children:[
                         {
                             label:'For Loops',
@@ -65,10 +92,10 @@ function SideBar() {
         },
         {
             label:'Games',
-            link:'/games',
             children:[
                 {
                     label:'Loops',
+                    link:'/games/loops',
                     children:[
                         {
                             label:'For Loops',
@@ -111,11 +138,11 @@ function SideBar() {
                     children:[
                         {
                             label:'For Loops',
-                            link:'/games/forloopgame'
+                            link:'/Quizzes/Loops/ForLoopQuiz'
                         },
                         {
                             label:'While Loops',
-                            link:'/games/whileloopgame'
+                            link:'/'
                         },
                         {
                             label:'Do While Loops',
@@ -225,7 +252,7 @@ function SideBar() {
          {
         !open && 
         <Button
-        sx={{ height: 100 }}
+        sx={{ height: 100,display:'block' }}
         onClick={handleDrawerOpen}
 
       >
@@ -236,9 +263,10 @@ function SideBar() {
      
         
         <Drawer
-        variant="persistent"
+     
         anchor="left"
         open={open}
+        onClose={handleDrawerOpen}
       >
       <List
         sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}

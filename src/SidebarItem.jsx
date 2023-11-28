@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -8,15 +9,17 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { useNavigate} from "react-router-dom";
 export default function SidebarItem({ label,link, children }) {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const navigate = useNavigate();
     const handleClick = () => {
       setOpen(!open);
     };
-    debugger;
     if(!link){
-        link = '/'
+        link = window.location.pathname
+    }
+    if(!children){
+        children = []
     }
   return (
     <>
