@@ -12,9 +12,6 @@ import { Link } from "react-router-dom";
 export default function Genericquestionsection({ questions }) {
   return (
     <>
-      <Button style={{ background: "red", margin: "2%" }} variant="contained">
-        START
-      </Button>
       <Button variant="outlined">30 MINUTES 🕑</Button>
       {questions.map((question) => {
         return (
