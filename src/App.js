@@ -7,8 +7,8 @@ import LoopPracticeProblems from "./PracticeProblems/LoopPracticeProblems";
 import WhileLoopQuestions from "./PracticeProblems/WhileLoopQuestions";
 import WhileLoopSolutions from "./PracticeProblems/WhileLoopSolutions";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LandingPage from "./LandingPage";
-import HomeScreen from "./HomeScreen"; // Import HomeScreen or other components
+import LandingPage from "./LandingPage/LandingPage";
+import HomeScreen from "./HomeScreen/HomeScreen"; // Import HomeScreen or other components
 import GamesNavigationConcept from "./games/GamesNavigationConcept";
 import LoopGames from "./games/LoopGames";
 import ForloopGame from "./games/loopGames/ForloopGame";
@@ -17,11 +17,16 @@ import Navbar from "./Navbar";
 import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
 
+import LessonsLanding from "./Lessons/LessonsLanding";
+import LessonsLoops from "./Lessons/LessonsLoops";
+import LessonsLoopsForLoop from "./Lessons/LessonLoopsForLoop";
+import LessonsLoopsWhileLoop from "./Lessons/LessonLoopsWhileLoop";
+import UserProfile from "./Profile";
+
 function App() {
   return (
     <>
    
-    
     <Router>
     <Navbar></Navbar>
         <Routes>
@@ -61,8 +66,18 @@ function App() {
             element={<WhileLoopGame />}
           />
           <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/profile" element={<UserProfile />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
-        </Routes>
+  
+
+      <Route path="/Lessons" element={<LessonsLanding />} />
+      <Route path="/Lessons/Loops" element={<LessonsLoops />} />
+      <Route path="/Lessons/Loops/ForLoop" element={<LessonsLoopsForLoop />} />
+      <Route path="/Lessons/Loops/WhileLoop" element={<LessonsLoopsWhileLoop />} />
+
+
+
+      </Routes>
       </Router>
     </>
   );

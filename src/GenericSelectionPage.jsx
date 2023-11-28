@@ -6,11 +6,13 @@ import Button from "@mui/material/Button";
 import { Autocomplete } from "@mui/material";
 import TextField from "@mui/material/TextField";
 // links should be an array of objects in this format {link:'link', name:'name'} handle change is how to handle the change in the language
-function GenericSelectionPage({ links, handleLanguageChange, title, grid }) {
+function GenericSelectionPage({ links, handleLanguageChange, title, grid, lessonsLoops }) {
   const navigate = useNavigate();
   const [search,setSearch] =  useState("");
   const [linksToDisplay, setLinksToDisplay] = useState(links);
   const def = "C++";
+  const loopOverview = "Loops are control structures in programming that allow you to execute a block of code repeatedly based on a certain condition. In programming, loops are like a magic spell that lets your computer do the same thing over and over again. Imagine you have a list of chores, like washing dishes or sweeping the floor. Instead of telling your computer to do each chore one by one, you can use loops to make your computer do them all with just a few lines of code.";
+
 
   const [language,setLanguage] = useState(def)
 
@@ -44,6 +46,14 @@ function GenericSelectionPage({ links, handleLanguageChange, title, grid }) {
       <div className="container">
         <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={search || ''} onChange={(e)=> {searchChange(e)}} /></div>
        
+        {lessonsLoops && 
+        <div className="loop-description-box"> 
+            <h2>What are Loops?</h2>
+      <p>
+        Loops are {loopOverview}
+      </p>
+          </div>}
+          <br></br>
         <div className={grid ? 'grid': 'list'}>
           {linksToDisplay.map((object, i) => (
             <div className="list-item">
@@ -53,7 +63,7 @@ function GenericSelectionPage({ links, handleLanguageChange, title, grid }) {
             </div>
           ))}
         </div>
-      
+        
       </div>
     </div>
    
