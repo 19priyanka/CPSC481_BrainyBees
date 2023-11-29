@@ -23,6 +23,9 @@ import LessonsLoopsForLoop from "./Lessons/LessonLoopsForLoop";
 import LessonsLoopsWhileLoop from "./Lessons/LessonLoopsWhileLoop";
 import UserProfile from "./Profile";
 import SideBar from "./SideBar";
+import React from 'react';
+import SupplementaryDocsNav from './SupplementaryDocuments/SupplementaryDocsNav';
+import SupplementaryDocs from './SupplementaryDocuments/SupplementaryDocs';
 
 function App() {
   return (
@@ -63,24 +66,20 @@ function App() {
           />
           <Route path="/games/loops" element={<LoopGames />} />
           <Route path="/games/loops/forloopgame" element={<ForloopGame />} />
-          <Route
-            path="/games/loops/whileloopgame"
-            element={<WhileLoopGame />}
-          />
+          <Route path="/games/loops/whileloopgame" element={<WhileLoopGame />} />
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/profile" element={<UserProfile />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
-  
-
-      <Route path="/Lessons" element={<LessonsLanding />} />
-      <Route path="/Lessons/Loops" element={<LessonsLoops />} />
-      <Route path="/Lessons/Loops/ForLoop" element={<LessonsLoopsForLoop />} />
-      <Route path="/Lessons/Loops/WhileLoop" element={<LessonsLoopsWhileLoop />} />
-
-
-
-      </Routes>
-      </Router>
+          <Route path="/Lessons" element={<LessonsLanding />} />
+          <Route path="/Lessons/Loops" element={<LessonsLoops />} />
+          <Route path="/Lessons/Loops/ForLoop" element={<LessonsLoopsForLoop />} />
+          <Route path="/Lessons/Loops/WhileLoop" element={<LessonsLoopsWhileLoop />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/homescreen" element={<HomeScreen />} />
+          <Route path="/supplementary-docs" element={<SupplementaryDocsNav />} /> 
+          <Route path="/supplementary-docs/:docType" element={<SupplementaryDocs />} />
+        </Routes>
+        </Router>
     </>
   );
 }
