@@ -1,7 +1,6 @@
 import React from "react";
 import WhileLoopSolutionsSection from "./WhileLoopSolutionsSection";
 import ShowPath from "../Showpath.jsx"
-import Genericresultsection from "../Quiz/Genericresultsection.js";
 
 export default function WhileLoopSolutions() {
   const solutions = [
@@ -33,7 +32,6 @@ export default function WhileLoopSolutions() {
       <ShowPath></ShowPath>
       <h1 style={{ color: "blue" }}>WHILE LOOPS SOLUTIONS</h1>
       <WhileLoopSolutionsSection questions={solutions} />;
-      <Genericresultsection questions={solutions} />
     </>
   );
 }
