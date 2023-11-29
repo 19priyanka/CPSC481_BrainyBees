@@ -26,16 +26,63 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
 
   const searchChangeCategory = (event) => {
     const currentInput = event.target.value
+
+    
   
     const filtered = accordionCategories.filter((c) => {
       return c.name.toLowerCase().includes(currentInput)
     })
+    if(currentInput.length > 1){
+    const filterByChildren = accordionCategories.filter((c) => 
+    {
+      return c.children.some((child)=> {
+        return child.name.toLowerCase().includes(currentInput)
+      })
+    }
+    )
 
-    setSearch(currentInput)
+    filterByChildren.forEach(c1=> {
+      filterWithinCategories(c1,currentInput)
+      if(!filtered.find(c => c1.name === c.name)){
+        filtered.push(c1)
+      }
+    }
+    );
+  }
+
+
   
+    setSearch(currentInput)
 
+    
+  
     setAccordionCategoriesToDisplay(filtered)
     
+  }
+
+  const filterWithinCategories = (accordionCategory,currentInput)=> {
+
+    // when filtered, we need to keep track of the original children so we can filter again, otherwise we will lose the original children
+    // first time, there are no original children , but after filtering once there will be
+    if(!accordionCategory.originalChildren){
+      const filtered = accordionCategory.children.filter((c) => {
+        return c.name.toLowerCase().includes(currentInput)
+      })
+      accordionCategory.originalChildren = accordionCategory.children
+      accordionCategory.children = filtered
+      }
+      else {
+          const filtered = accordionCategory.originalChildren.filter((c) => {
+              return c.name.toLowerCase().includes(currentInput)
+            })
+              accordionCategory.children = filtered
+  
+      }
+  if(accordionCategory.children.length !== 0){
+      accordionCategory.expand = true;
+  }
+     
+
   }
   // index of accordion category
   const searchWithinCateogryChange = (event,name) => {
@@ -44,21 +91,11 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
     setSearchWithinCategory({...searchWithinCategory})
    
     const accordionCategory = accordionCategories.find(c=> c.name === name)
-    // when filtered, we need to keep track of the original children so we can filter again, otherwise we will lose the original children
-    // first time, there are no original children , but after filtering once there will be
-    if(!accordionCategory.originalChildren){
-    const filtered = accordionCategory.children.filter((c) => {
-      return c.name.toLowerCase().includes(currentInput)
-    })
-    accordionCategory.originalChildren = accordionCategory.children
-    accordionCategories.children = filtered
-    }
-    else {
-        const filtered = accordionCategory.originalChildren.filter((c) => {
-            return c.name.toLowerCase().includes(currentInput)
-          })
-            accordionCategory.children = filtered
+    
+    filterWithinCategories(accordionCategory,currentInput)
 
+    if(!accordionCategoriesToDisplay.find(accordionCategory)) {
+        setAccordionCategoriesToDisplay([...accordionCategoriesToDisplay,accordionCategory])
     }
     
 
@@ -77,15 +114,24 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
 
   }, [accordionCategories,handleLanguageChange])
 
+  const setExpanded = (name) => {
+    debugger;
+    const accordionCategory = accordionCategories.find(c=> c.name === name)
+    accordionCategory.expand = !accordionCategory.expand
+    setAccordionCategoriesToDisplay([...accordionCategoriesToDisplay])
+
+  }
+
   
 
   const languages = ["C++", "Python", "Java"];
 
   // trigger event for fefault
     return (
-        <div>
+        <div className="padding">
+          <h1>{title}: {language}</h1>
             <div className="search-flex">
-        <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search Categories" variant="outlined" value={search || ''} onChange={(e)=> {searchChangeCategory(e)}} /></div>
+        <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={search || ''} onChange={(e)=> {searchChangeCategory(e)}} /></div>
 
         <Autocomplete
           sx={{ width: 200, marginLeft:10 }}
@@ -103,11 +149,12 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
         </div>
             { 
         accordionCategoriesToDisplay.map((x,index)=> {
-         return <>  <Accordion>
+         return <>  <Accordion value={undefined} id={`category-${x.name}`} expanded={x.expand || false}  >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
+            onClick={()=> {console.log("hi");setExpanded(x.name)}}
           >
             <Typography>{x.name}</Typography>
           </AccordionSummary>

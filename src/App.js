@@ -76,8 +76,8 @@ function App() {
           <Route path="/Lessons/Loops/WhileLoop" element={<LessonsLoopsWhileLoop />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="/homescreen" element={<HomeScreen />} />
-          <Route path="/supplementary-docs" element={<SupplementaryDocsNav />} /> 
-          <Route path="/supplementary-docs/:docType" element={<SupplementaryDocs />} />
+          <Route path="/supplementarydocs" element={<SupplementaryDocsNav />} /> 
+          <Route path="/supplementarydocs/:docType" element={<SupplementaryDocs />} />
         </Routes>
         </Router>
     </>

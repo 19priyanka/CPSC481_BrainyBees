@@ -42,7 +42,7 @@ function HomeScreen(props) {
       progress: "5%",
     },
     {
-      link: "/supplmentarydocs",
+      link: "/supplementarydocs",
       name: "Supplementary Docs",
       desc: "Access some extra resources to help you visualize and understand the lessons better!",
       image:

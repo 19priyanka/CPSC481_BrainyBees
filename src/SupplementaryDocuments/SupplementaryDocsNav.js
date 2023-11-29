@@ -6,6 +6,44 @@ import './SupplementaryDocsNav.css'; // Import your CSS file
 function SupplementaryDocsNav(props) {
   const navigate = useNavigate();
 
+  const accordionCategories = [
+    {
+      name:'Operators',
+      children:[
+
+
+      ],
+      Summary:'Operators summary'
+
+    },
+    {
+      name:'Loops',
+      children:[
+        {link:"/PracticeProblems/Loops/ForLoop",name:'For Loops '},
+        {link:"/PracticeProblems/Loops/WhileLoop",name:'While Loops '},
+      {link:"/PracticeProblems/Loops/DoLoop",name:'Do While Loops '}, 
+      {link:"/PracticeProblems/Loops/NestedLoop",name:'Nested Loops'}, 
+      {link:'',name:'Hashmap loops'}
+      ,{link:'',name:'Infinite loops'}],
+      Summary:'Loops Summary'
+
+    },
+    {
+      name:'File IO',
+      children:[],
+      Summary:'File IO summary'
+
+    },
+    {
+      name:'Conditionals',
+      children:[],
+      Summary:'Conditionals summary'
+
+    },
+
+
+  ]
+
   return (
     <>
       <h1 style={{ color: 'blue' }}>Supplementary Documents</h1>
