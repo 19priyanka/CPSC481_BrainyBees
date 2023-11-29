@@ -42,7 +42,7 @@ function Navbar() {
     setUserElement(null);
   };
   const pages = [
-    {
+   /* {
       link:'/games',
       name:'Games'
     },
@@ -61,7 +61,7 @@ function Navbar() {
     {
       link:'/supplementarydocuments',
       name:'Supplementary Documents'
-    },
+    },*/
     
   ]
 
