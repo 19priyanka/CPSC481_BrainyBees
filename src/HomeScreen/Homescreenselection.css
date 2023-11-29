@@ -1,0 +1,70 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+
+.list-item {
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center-vertical {
+  display: flex;
+  justify-content: center;
+}
+.loop-description-box {
+  border: 1px solid #ccc; /* Add a border around the box */
+  padding: 20px; /* Add some padding inside the box */
+  margin: 10px; /* Add margin to create space around the box */
+  background-color: #f9f9f9; /* Set a background color for the box */
+  max-width: 400px; /* Limit the maximum width of the box */
+  word-wrap: break-word; /* Allow text to wrap within the box */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1em;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center-vertical {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1em;
+}
+
+/* styles.css */
+.custom-image-class {
+  height: 1%; /* Set the height of the image */
+  width: 10%; /* Ensure the image takes the full width of the container */
+  max-height: 285px;
+  min-height: 285px;
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+body {
+  background-color: #fffa5a26;
+}
