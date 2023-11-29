@@ -10,8 +10,8 @@ export default function WhileLoopSolutions() {
       solution:"Explanation: In coding, a while loop is like a rule that tells the computer to do something again and again, but only if a special condition is met. It's a bit like saying,'Keep doing this as long as the rule says yes!' These loops are great because they help you make the computer do things many times without writing the same stuff over and over."
     },
     {
-      question: "How do you know when to stop a while loop from running?",
-      choice1: "When a specific condition becomes false",
+      question: "A __________ continues to execute as long as a certain condition remain true",
+      choice1:"while loop",
       solution:"Explanation: To know when to stop a while loop from running, you should pay attention to a special rule. The loop will keep going as long as that rule is true. But once that rule becomes false, it's time to stop the loop and move on to something else."
     },
     {
