@@ -1,9 +1,10 @@
 import React from "react";
 import WhileLoopSolutionsSection from "./WhileLoopSolutionsSection";
 import ShowPath from "../Showpath.jsx"
+import Genericresultsection from "../Quiz/Genericresultsection.js";
 
 export default function WhileLoopSolutions() {
-  const loopQns = [
+  const solutions = [
     {
       question: "What is the purpose of a while loop in coding?",
       choice1: "To repeat a block of code as long as a certain condition is true",
@@ -31,7 +32,8 @@ export default function WhileLoopSolutions() {
     <>
       <ShowPath></ShowPath>
       <h1 style={{ color: "blue" }}>WHILE LOOPS SOLUTIONS</h1>
-      <WhileLoopSolutionsSection questions={loopQns} />;
+      <WhileLoopSolutionsSection questions={solutions} />;
+      <Genericresultsection questions={solutions} />
     </>
   );
 }
