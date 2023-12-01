@@ -59,14 +59,7 @@ function HomeScreen(props) {
   ];
   return (
     <div style={{ marginTop: "1em" }}>
-      <Button
-        variant="outlined"
-        color="primary"
-        startIcon={<span>&#8592;</span>}
-        onClick={() => navigate("/")}
-      >
-        Back To Landing Page{" "}
-      </Button>
+      
       <Homescreenselection
         links={links}
         grid={true}

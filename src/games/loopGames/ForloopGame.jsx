@@ -102,7 +102,7 @@ function ForloopGame(props) {
      
 
       <div className="description">
-      <div>Complete the code such that only 5 of the circles are filled after running the code</div>
+      <div>Complete the code such that only 6 of the circles are filled after running the code</div>
       <Button variant="contained" onClick={showHint}>Hint</Button>
       </div>
         <div className="margin-top margin-bottom box">

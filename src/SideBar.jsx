@@ -12,32 +12,41 @@ import Button from "@mui/material/Button";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useLocation} from "react-router"
 
+import "./SideBar.css";
 
 import SidebarItem from './SidebarItem';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 function SideBar() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const location = useLocation();
     const [currentPage, setCurrentPage] = useState('');
-    const dontShowRoutes = ['/','/homescreen']
+    const dontShowRoutes = ['/']
+    const [show,setShow] = useState(true)
 
     useEffect(()=> {
         // could use local storage instead of session storage if we want it to persist after closing the browser
         //set timeout to fix weird bug
-        debugger
+       
         
         setTimeout(()=>{
     
           // get current page
         const current = window.location.pathname
-        if(currentPage !== current){
-            setCurrentPage(current)
-            setOpen(false)
-        }
+       
         let found = false;
         
+        // check if current page is in the dont show routes
+        dontShowRoutes.forEach((page)=> {
+            if(current ===  page) {
+              found = true;
+            }
+          })
+        // if it's not in the dont show routes, set the current page
+        setShow(!found)
+
+
        
             
         },0)
@@ -51,6 +60,14 @@ function SideBar() {
   };
 
     const sideBarItems = [
+        {
+            label:'Home',
+            link:'/homescreen',
+        },
+        {
+            label:'Landing Page',
+            link:'/',
+        },
         {
             label:'Lessons',
             children:[
@@ -248,7 +265,8 @@ function SideBar() {
     ]
   
     return (
-        <>
+    <>  {show ?  <>
+        <div className='main-container'>
          {
         !open && 
         <Button
@@ -260,14 +278,9 @@ function SideBar() {
       </Button>
         }
 
-     
-        
-        <Drawer
-     
-        anchor="left"
-        open={open}
-        onClose={handleDrawerOpen}
-      >
+{open &&
+        <div className='height'>
+   
       <List
         sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
         component="nav"
@@ -292,7 +305,14 @@ function SideBar() {
         }
        
       </List>
-      </Drawer>
+
+      </div>
+}
+      </div>
+      
+        </>
+ : <></>
+}
         </>
     );
 }

@@ -93,13 +93,17 @@ function WhileloopGame(props) {
       <Button variant="contained" onClick={() => showHint()}>Hint</Button>
       </div>
         <div className="margin-top margin-bottom box">
+            <code style={{display: "block"}}>  //assume this function moves the red dot forward </code>
             <code>void redDotRunAway&#40;&#41; </code> <code>&#123;</code>
             <code style={{display: "block"}}>runAway&#40;&#41;;</code>
             <code style={{display: "block"}} >&#125;</code>
             <br></br>
             <code>int main&#40;&#41; </code> <code>&#123;</code>
+            <code style={{display: "block"}}>  //current position of red dot </code>
             <code style={{display: "block"}}>  int redPosition = 1; </code>
+            <code style={{display: "block"}}>  //current position of blue dot </code>
             <code style={{display: "block"}}>  int bluePosition = 0; </code>
+            <code style={{display: "block"}}>  //assume this function moves the blue dot forward </code>
             <code style={{display: "block"}}>moveBlue&#40;&#41; ;</code>
 
 

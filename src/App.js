@@ -33,7 +33,11 @@ function App() {
    
     <Router>
     <Navbar></Navbar>
+    <div style={{display:'flex'}}>
+      <div className="sidebar">
     <SideBar></SideBar>
+    </div>
+    <div class = "routes">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/homescreen" element={<HomeScreen />} />
@@ -79,7 +83,10 @@ function App() {
           <Route path="/supplementarydocs" element={<SupplementaryDocsNav />} /> 
           <Route path="/supplementarydocs/:docType" element={<SupplementaryDocs />} />
         </Routes>
+        </div>
+        </div>
         </Router>
+        
     </>
   );
 }
