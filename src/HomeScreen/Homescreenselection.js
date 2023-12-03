@@ -49,13 +49,14 @@ function Homescreenselection({
   // trigger event for fefault
   return (
     <div className="center-vertical d-block mt-0">
+     
       <div style={{ textAlign: "center" }} className="center d-block">
-        <h1 style={{ position: "relative", left: "17%" }}>
+        <h1 style={{ position: "relative", left: "0%", marginBottom:'1em' }}>
           {title}: {language}
         </h1>
         <div className="container">
           <div
-            style={{ position: "relative", left: "15%", marginBottom: "20px" }}
+            style={{ display: "flex", position: "relative", left: "50%", marginBottom: "20px" }}
           >
             <TextField
               id="outlined-basic"
@@ -66,7 +67,22 @@ function Homescreenselection({
                 searchChange(e);
               }}
             />
+             <Autocomplete
+        sx={{ width: 200, marginLeft: 10 }}
+        options={languages}
+        value={language}
+        renderInput={(params) => (
+          <TextField {...params} label="Change Language" />
+        )}
+        onChange={(event, value) => {
+          handleLanguageChange(value);
+          setLanguage(value);
+        }}
+        defaultValue={def}
+      />
           </div>
+
+         
 
           {lessonsLoops && (
             <div className="loop-description-box">
@@ -125,19 +141,7 @@ function Homescreenselection({
         </div>
       </div>
 
-      <Autocomplete
-        sx={{ width: 200, marginLeft: 10 }}
-        options={languages}
-        value={language}
-        renderInput={(params) => (
-          <TextField {...params} label="Change Language" />
-        )}
-        onChange={(event, value) => {
-          handleLanguageChange(value);
-          setLanguage(value);
-        }}
-        defaultValue={def}
-      />
+      
     </div>
   );
 }
