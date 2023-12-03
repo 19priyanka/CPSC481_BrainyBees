@@ -49,7 +49,9 @@
   grid-gap: 1em;
 }
 
-
+.LoopsSummaryAccordion{
+  background-color: red;
+}
 
 .center {
   display: flex;

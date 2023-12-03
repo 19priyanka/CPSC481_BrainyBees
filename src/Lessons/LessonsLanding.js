@@ -12,6 +12,7 @@ export default function LessonsLanding() {
     { link: "/Lessons/Conditionals", name: "Inheritance" },
     { link: "/Lessons/Conditionals", name: "I/O" },
   ];*/
+
   const links = [
     { link: "/Lessons/Loops/ForLoop", name: "For Loop" },
     { link: "/Lessons/Loops/WhileLoop", name: "While Loop" },
@@ -37,7 +38,7 @@ export default function LessonsLanding() {
       {link:"/Lessons/Loops/NestedLoop",name:'Nested Loops'}, 
       {link:'',name:'Hashmap loops'}
       ,{link:'',name:'Infinite loops'}],
-      Summary:'Loops Summary'
+      Summary:'Loops are control structures in programming that allow you to execute a block of code repeatedly based on a certain condition. In programming, loops are like a magic spell that lets your computer do the same thing over and over again. Imagine you have a list of chores, like washing dishes or sweeping the floor. Instead of telling your computer to do each chore one by one, you can use loops to make your computer do them all with just a few lines of code.'
 
     },
     {
@@ -57,7 +58,7 @@ export default function LessonsLanding() {
   ]
   return (
     <>
-    <GenericAccordionSelectionPage accordionCategories={accordionCategories} handleLanguageChange={(value)=> {console.log(value)}} title="Lessons"/>
+    <GenericAccordionSelectionPage grid imageOption accordionCategories={accordionCategories} handleLanguageChange={(value)=> {console.log(value)}} title="Lessons" />
 
     </>
   );
