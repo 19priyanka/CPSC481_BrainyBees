@@ -5,6 +5,7 @@ import "./GenericSelectionPage.css";
 import Button from "@mui/material/Button";
 import { Autocomplete } from "@mui/material";
 import TextField from "@mui/material/TextField";
+import SideBar from "./SideBar";
 // links should be an array of objects in this format {link:'link', name:'name'} handle change is how to handle the change in the language
 function GenericSelectionPage({ links, handleLanguageChange, title, grid, lessonsLoops }) {
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ function GenericSelectionPage({ links, handleLanguageChange, title, grid, lesson
   // trigger event for fefault
     return (
     <div className="center-vertical" >
+     
     <div className="center">
       <h1>{title}: {language}</h1>
       <div className="container">
