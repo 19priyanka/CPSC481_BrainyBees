@@ -65,7 +65,7 @@ export default function LandingPage(props) {
      <Grid container spacing={2}>
      {linksToDisplay.map((object, i) => (
                 <Grid item key={i} xs={12} sm={6} md={4} lg={3}> 
-                  <Card  style={{ boxShadow: "2px 2px 5px", width:'100%', height:'100%', marginLeft: '300px', marginTop: '50px' }}
+                  <Card  style={{ boxShadow: "2px 2px 5px", width:'100%', height:'auto', marginLeft: '300px', marginTop: '50px' }}
                     sx={{ maxWidth: 345, display: 'flex', flexDirection: 'column'  }}>
                     <StyledCard onClick={() => navigate(object.link)}>
                     <CardMedia
