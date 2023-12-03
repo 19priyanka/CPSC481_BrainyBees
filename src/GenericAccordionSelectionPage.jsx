@@ -163,7 +163,7 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
            <div style={{ display: 'flex', alignItems: 'center' }}>
            <Typography variant="h6" style={{marginBottom: '30px'}}>{x.Summary}</Typography>
            
-           {imageOption && <img src="https://miro.medium.com/v2/resize:fit:510/0*urnSq8vQ0xujKwid.jpeg" alt="Description" style={{ maxWidth: '20%', height: '20%' }}></img>}
+           {imageOption && x.name === 'Loops' && <img src="https://miro.medium.com/v2/resize:fit:510/0*urnSq8vQ0xujKwid.jpeg" alt="Description" style={{ maxWidth: '20%', height: '20%' }}></img>}
        
             </div>
             <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={searchWithinCategory[x.name] || ''} onChange={(e)=> {searchWithinCateogryChange(e,x.name)}} /></div>
