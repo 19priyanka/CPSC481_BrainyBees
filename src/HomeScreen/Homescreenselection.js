@@ -84,13 +84,6 @@ function Homescreenselection({
 
          
 
-          {lessonsLoops && (
-            <div className="loop-description-box">
-              <h2>What are Loops?</h2>
-              <p>Loops are {loopOverview}</p>
-            </div>
-          )}
-          <br></br>
           <section>
             <div
               style={{ position: "relative", left: "15%" }}
@@ -102,6 +95,7 @@ function Homescreenselection({
                     style={{ boxShadow: "2px 2px 5px" }}
                     sx={{ maxWidth: 345 }}
                   >
+                   
                     <CardMedia
                       component="img" // Use the img element as the underlying component
                       alt="green iguana"
@@ -133,6 +127,7 @@ function Homescreenselection({
                         {object.progress} Complete
                       </Button>
                     </CardActions>
+  
                   </Card>
                 </div>
               ))}

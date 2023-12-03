@@ -111,6 +111,19 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
         searchCategoriesObj[c.name] = ''
     })
     setSearchWithinCategory(searchCategoriesObj)
+    // grey out certain lessons
+    const username = sessionStorage.getItem('userName')
+    if(title.toLowerCase().includes('lessons') && username === 'steve'){
+      accordionCategories.forEach(c=> {
+        if(c.name === 'Loops'){
+          c.children.forEach(child=> {
+            if(child.name.toLowerCase() === 'for loops'){
+              child.grey = true;
+            }
+          })
+        }
+      })
+    }
 
   }, [accordionCategories,handleLanguageChange])
 
@@ -163,7 +176,7 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
            <div style={{ display: 'flex', alignItems: 'center' }}>
            <Typography variant="h6" style={{marginBottom: '30px'}}>{x.Summary}</Typography>
            
-           {imageOption && <img src="https://miro.medium.com/v2/resize:fit:510/0*urnSq8vQ0xujKwid.jpeg" alt="Description" style={{ maxWidth: '20%', height: '20%' }}></img>}
+           {imageOption && x.name === 'Loops' && <img src="https://miro.medium.com/v2/resize:fit:510/0*urnSq8vQ0xujKwid.jpeg" alt="Description" style={{ maxWidth: '20%', height: '20%' }}></img>}
        
             </div>
             <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={searchWithinCategory[x.name] || ''} onChange={(e)=> {searchWithinCateogryChange(e,x.name)}} /></div>
@@ -171,7 +184,7 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
           <div className={grid ? 'grid': 'list'}>
           {x.children.map((object, i) => (
             <div className="list-item">
-              <Button style={{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
+              <Button style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
                 {object.name}
               </Button>
             </div>
