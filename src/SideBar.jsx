@@ -109,6 +109,7 @@ function SideBar() {
         },
         {
             label:'Games',
+            link:'/games',
             children:[
                 {
                     label:'Loops',

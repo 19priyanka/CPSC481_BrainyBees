@@ -111,6 +111,19 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
         searchCategoriesObj[c.name] = ''
     })
     setSearchWithinCategory(searchCategoriesObj)
+    // grey out certain lessons
+    const username = sessionStorage.getItem('userName')
+    if(title.toLowerCase().includes('lessons') && username === 'ben'){
+      accordionCategories.forEach(c=> {
+        if(c.name === 'Loops'){
+          c.children.forEach(child=> {
+            if(child.name.toLowerCase() === 'for loops'){
+              child.grey = true;
+            }
+          })
+        }
+      })
+    }
 
   }, [accordionCategories,handleLanguageChange])
 
@@ -171,7 +184,7 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
           <div className={grid ? 'grid': 'list'}>
           {x.children.map((object, i) => (
             <div className="list-item">
-              <Button style={{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
+              <Button style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
                 {object.name}
               </Button>
             </div>
