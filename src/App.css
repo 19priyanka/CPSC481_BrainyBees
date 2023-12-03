@@ -1,6 +1,5 @@
 body {
     font-family: "Nunito Sans","Segoe UI",sans-serif;
-
 }
 
 input {
@@ -8,4 +7,16 @@ input {
 }
 .MuiInputBase-root {
     background-color: white !important;
+}
+
+.layout {
+    display: flex;
+    
+}
+
+.routes {
+    flex-grow: 1.5;
+}
+
+.sidebar {
 }

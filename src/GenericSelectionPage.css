@@ -14,7 +14,16 @@
   gap: 50%;
 }
 
+.padding {
+  padding-left:3%;
+  padding-right: 3%;
+}
 
+.search-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .center {
   display: flex;
   align-items: center;
@@ -40,7 +49,9 @@
   grid-gap: 1em;
 }
 
-
+.LoopsSummaryAccordion{
+  background-color: red;
+}
 
 .center {
   display: flex;
