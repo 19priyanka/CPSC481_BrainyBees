@@ -11,8 +11,6 @@ import {
 } from "@mui/material";
 import "./Quiz.css";
 
-// ... (your imports)
-
 export default function Genericquestionsection() {
   const navigate = useNavigate();
   const questions = [
@@ -56,7 +54,7 @@ export default function Genericquestionsection() {
 
   const title = "LOOPS";
 
-  const [time, setTime] = useState(7);
+  const [time, setTime] = useState(80);
   const [blink, setBlink] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [flashBackground, setFlashBackground] = useState(false);
@@ -67,7 +65,7 @@ export default function Genericquestionsection() {
       setTime((prevTime) => {
         if (prevTime === 0) {
           clearInterval(intervalId);
-          handleAutoSubmit(); // Call the auto-submit function
+          handleAutoSubmit();
         } else if (prevTime === 1) {
           handleAutoSubmit();
         } else if (prevTime <= 60) {
@@ -85,14 +83,13 @@ export default function Genericquestionsection() {
 
   useEffect(() => {
     const flashInterval = setInterval(() => {
-      setFlashBackground((prev) => !prev); // Toggle the background every 1 second
+      setFlashBackground((prev) => !prev);
     }, 500);
 
     return () => clearInterval(flashInterval);
   }, [time]);
 
   useEffect(() => {
-    // Check the 'submitted' state and navigate accordingly
     if (submitted) {
       navigate("/Quizzes/Loops/ForLoopQuiz/Results", {
         state: { questions: getUpdatedQuestions() },
@@ -101,7 +98,6 @@ export default function Genericquestionsection() {
   }, [submitted]);
 
   const handleAnswerChange = (index, answer) => {
-    // Allow changing answers only if not submitted
     if (!submitted) {
       const newSelectedAnswers = [...selectedAnswers];
       newSelectedAnswers[index] = answer;
@@ -118,7 +114,6 @@ export default function Genericquestionsection() {
   };
 
   const getUpdatedQuestions = () => {
-    // Ensure the solution fields are set before navigating
     const updatedQuestions = questions.map((question, index) => ({
       ...question,
       solution: selectedAnswers[index] || "",
