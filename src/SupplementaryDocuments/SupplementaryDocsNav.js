@@ -1,43 +1,51 @@
-import React from 'react';
+import React from "react";
+import Button from '@mui/material/Button';
+import GenericAccordionSelectionPage from "../GenericAccordionSelectionPage.jsx";
 import { useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button'; // Import Material-UI Button
-import './SupplementaryDocsNav.css'; // Import your CSS file
 
-function SupplementaryDocsNav(props) {
+export default function SupplementaryDocs() {
   const navigate = useNavigate();
+
+  const accordionCategories = [
+    {
+      name: 'Variables',
+      children: [],
+      Summary: 'Variables Summary'
+    },
+    {
+      name: 'Loops',
+      children: [
+        { link: "/Supplementary Docs/Loops/ForLoop", name: 'For Loops' },
+        { link: "/Supplementary Docs/Loops/WhileLoop", name: 'While Loops' },
+        { link: "/Supplementary Docs/Loops/DoLoop", name: 'Do While Loops' },
+        {link:"/Supplementary Docs/Loops/NestedLoop",name:'Nested Loops'}, 
+        {link:'',name:'Hashmap loops'},
+        {link:'',name:'Infinite loops'}
+      ],
+      Summary: 'Loops Summary'
+    },
+    {
+      name: 'Conditionals',
+      children: [],
+      Summary: 'Conditionals Summary'
+    },
+    {
+      name: 'Pointers',
+      children: [],
+      Summary: 'Pointers Summary'
+    },
+    {
+      name: 'Inheritance',
+      children: [],
+      Summary: 'Inheritance Summary'
+    }
+  ];
 
   return (
     <>
-      <h1 style={{ color: 'blue' }}>Supplementary Documents</h1>
-      <div className="button-container">
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate('/supplementary-docs/variables')}
-          style={{ width: '200px' }} // Set the button width as desired
-        >
-          Variables
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate('/supplementary-docs/conditional-statements')}
-          style={{ width: '200px' }} // Set the button width as desired
-        >
-          Conditional Statements
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate('/supplementary-docs/loops')}
-          style={{ width: '200px' }} // Set the button width as desired
-        >
-          Loops
-        </Button>
-        
-      </div>
+      <GenericAccordionSelectionPage accordionCategories={accordionCategories} handleLanguageChange={(value) => { console.log(value) }} title="Supplemental Documents" />
+      
+      
     </>
   );
 }
-
-export default SupplementaryDocsNav;

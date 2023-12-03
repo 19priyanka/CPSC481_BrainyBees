@@ -1,18 +1,62 @@
-/* SupplementaryDocsNav.css */
+/* SupplementaryDocs.css */
+
+.supplementary-docs {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.top-center {
+  text-align: center;
+}
+
+main {
+  display: flex;
+}
+
+.text-image-container {
+  flex: 1;
+  display: flex;
+}
+
+.text-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.button-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
 button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Optional: Add some spacing between the buttons */
-  }
-  
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff;
+}
+
+.bottom-left {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
