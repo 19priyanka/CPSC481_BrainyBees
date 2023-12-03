@@ -36,7 +36,7 @@ export default function LandingPage(props) {
     {
   
       name: "Python",
-      desc: "Python, the friendly language designed by Guido van Rossum, is known for its simplicity and readability. It's a versatile language used for a bit of everything - web development, scientific research, artificial intelligence, and even creating fun little games.",
+      desc: "Python, the friendly language designed by Guido van Rossum, is known for its simplicity and readability. It's a versatile language used for a bit of everything - web development, scientific research, artificial intelligence, and even creating fun little games. When you use Python, you're stepping into a world where creativity knows no bounds.",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
       progress: "35%",
