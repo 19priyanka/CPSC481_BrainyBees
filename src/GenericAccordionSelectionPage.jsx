@@ -111,11 +111,13 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
     setSearchWithinCategory(searchCategoriesObj)
     // grey out certain lessons
     const username = sessionStorage.getItem('userName')
-    if(title.toLowerCase().includes('lessons') && username === 'ben'){
+    if(title.toLowerCase().includes('lessons') && username){
       accordionCategories.forEach(c=> {
-        if(c.name === 'Loops'){
+        if(c.name.toLowerCase() === 'loops'){
+          const whileLoops  = localStorage.getItem("whileLoopsVisited"+username)
+          const forLoops = localStorage.getItem("forLoopsVisited"+username)
           c.children.forEach(child=> {
-            if(child.name.toLowerCase() === 'for loops'){
+            if((child.name.toLowerCase() === 'for loops' && forLoops) || (child.name.toLowerCase() === 'for loops' && username === 'ben') || (child.name.toLowerCase() === 'while loops' && whileLoops)){
               child.grey = true;
             }
           })
