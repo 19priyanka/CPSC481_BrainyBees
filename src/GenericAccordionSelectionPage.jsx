@@ -12,14 +12,14 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // accordion categories should be an array of objects in this format { name: 'name;summary:'summary' , children: [{link:'link', name:'name'}]} handle change is how to handle the change in the language
-function GenericSelectionPage({ accordionCategories, handleLanguageChange, title, grid, lessonsLoops }) {
+function GenericSelectionPage({ accordionCategories, handleLanguageChange, title, grid, imageOption }) {
   const navigate = useNavigate();
   const [search,setSearch] =  useState("");
   const [searchWithinCategory,setSearchWithinCategory] =  useState([]);
   const [accordionCategoriesToDisplay, setAccordionCategoriesToDisplay] = useState(accordionCategories);
   const [linksToDisplay, setLinksToDisplay] = useState({});
   const def = "C++";
-  const loopOverview = "Loops are control structures in programming that allow you to execute a block of code repeatedly based on a certain condition. In programming, loops are like a magic spell that lets your computer do the same thing over and over again. Imagine you have a list of chores, like washing dishes or sweeping the floor. Instead of telling your computer to do each chore one by one, you can use loops to make your computer do them all with just a few lines of code.";
+  //const loopOverview = "Loops are control structures in programming that allow you to execute a block of code repeatedly based on a certain condition. In programming, loops are like a magic spell that lets your computer do the same thing over and over again. Imagine you have a list of chores, like washing dishes or sweeping the floor. Instead of telling your computer to do each chore one by one, you can use loops to make your computer do them all with just a few lines of code.";
 
 
   const [language,setLanguage] = useState(def)
@@ -115,7 +115,7 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
   }, [accordionCategories,handleLanguageChange])
 
   const setExpanded = (name) => {
-    debugger;
+    // debugger;
     const accordionCategory = accordionCategories.find(c=> c.name === name)
     accordionCategory.expand = !accordionCategory.expand
     setAccordionCategoriesToDisplay([...accordionCategoriesToDisplay])
@@ -154,12 +154,18 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
-            onClick={()=> {console.log("hi");setExpanded(x.name)}}
+            onClick={()=> {console.log("Expanded Loops");setExpanded(x.name)}}
           >
-            <Typography>{x.name}</Typography>
+      
+            <Typography variant = "h5">{x.name}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <p>{x.summary}</p>
+           <div style={{ display: 'flex', alignItems: 'center' }}>
+           <Typography variant="h6" style={{marginBottom: '30px'}}>{x.Summary}</Typography>
+           
+           {imageOption && <img src="https://miro.medium.com/v2/resize:fit:510/0*urnSq8vQ0xujKwid.jpeg" alt="Description" style={{ maxWidth: '20%', height: '20%' }}></img>}
+       
+            </div>
             <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={searchWithinCategory[x.name] || ''} onChange={(e)=> {searchWithinCateogryChange(e,x.name)}} /></div>
 
           <div className={grid ? 'grid': 'list'}>

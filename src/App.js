@@ -75,7 +75,7 @@ function App() {
           <Route path="/profile" element={<UserProfile />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
           <Route path="/Lessons" element={<LessonsLanding />} />
-          <Route path="/Lessons/Loops" element={<LessonsLoops />} />
+          <Route path="/Lessons/Loops" element={<LessonsLanding />} />
           <Route path="/Lessons/Loops/ForLoop" element={<LessonsLoopsForLoop />} />
           <Route path="/Lessons/Loops/WhileLoop" element={<LessonsLoopsWhileLoop />} />
           <Route path="/" element={<LandingPage />} />

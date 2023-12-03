@@ -70,10 +70,10 @@ function SideBar() {
         },
         {
             label:'Lessons',
+            link:'/Lessons',
             children:[
                 {
                     label:'Loops',
-                    link:'/Lessons/Loops',
                     children:[
                         {
                             label:'For Loops',
@@ -81,7 +81,7 @@ function SideBar() {
                         },
                         {
                             label:'While Loops',
-                            link:'Lessons/Loops/ForLoop'
+                            link:'Lessons/Loops/WhileLoop'
                         },
                         {
                             label:'Do While Loops',
