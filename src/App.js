@@ -42,7 +42,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/homescreen" element={<HomeScreen />} />
           <Route path="/Quizzes" element={<QuizLanding />} />
-          <Route path="/Quizzes/Loops" element={<QuizLoops />} />
+          <Route path="/Quizzes/Loops" element={<QuizLanding  />} />
           <Route path="/Quizzes/Loops/ForLoopQuiz" element={<QuizPage />} />
           <Route path="/Quizzes/Loops/ForLoopQuiz/Results" element={<Results />} />
           <Route
@@ -51,7 +51,7 @@ function App() {
           />
           <Route
             path="/PracticeProblems/Loops"
-            element={<LoopPracticeProblems />}
+            element={<QuizLanding  />}
           />
           <Route
             path="/PracticeProblems/Loops/WhileLoop"
@@ -68,7 +68,7 @@ function App() {
             path="/games/conditionals"
             element={<GamesNavigationConcept />}
           />
-          <Route path="/games/loops" element={<LoopGames />} />
+          <Route path="/games/loops" element={<GamesNavigationConcept />} />
           <Route path="/games/loops/forloopgame" element={<ForloopGame />} />
           <Route path="/games/loops/whileloopgame" element={<WhileLoopGame />} />
           <Route path="/login" element={<LoginPage />}></Route>

@@ -26,17 +26,14 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
 
   const searchChangeCategory = (event) => {
     const currentInput = event.target.value
-
-    
-  
     const filtered = accordionCategories.filter((c) => {
-      return c.name.toLowerCase().includes(currentInput)
+      return c.name.toLowerCase().includes(currentInput.toLowerCase())
     })
     if(currentInput.length > 1){
     const filterByChildren = accordionCategories.filter((c) => 
     {
       return c.children.some((child)=> {
-        return child.name.toLowerCase().includes(currentInput)
+        return child.name.toLowerCase().includes(currentInput.toLowerCase())
       })
     }
     )
@@ -61,19 +58,19 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
   }
 
   const filterWithinCategories = (accordionCategory,currentInput)=> {
-
+    debugger;
     // when filtered, we need to keep track of the original children so we can filter again, otherwise we will lose the original children
     // first time, there are no original children , but after filtering once there will be
     if(!accordionCategory.originalChildren){
       const filtered = accordionCategory.children.filter((c) => {
-        return c.name.toLowerCase().includes(currentInput)
+        return c.name.toLowerCase().includes(currentInput.toLowerCase())
       })
       accordionCategory.originalChildren = accordionCategory.children
       accordionCategory.children = filtered
       }
       else {
           const filtered = accordionCategory.originalChildren.filter((c) => {
-              return c.name.toLowerCase().includes(currentInput)
+              return c.name.toLowerCase().includes(currentInput.toLowerCase())
             })
               accordionCategory.children = filtered
   
@@ -91,10 +88,11 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
     setSearchWithinCategory({...searchWithinCategory})
    
     const accordionCategory = accordionCategories.find(c=> c.name === name)
+    debugger
     
     filterWithinCategories(accordionCategory,currentInput)
 
-    if(!accordionCategoriesToDisplay.find(accordionCategory)) {
+    if(!accordionCategoriesToDisplay.find(c => c.name === accordionCategory.name)) {
         setAccordionCategoriesToDisplay([...accordionCategoriesToDisplay,accordionCategory])
     }
     
