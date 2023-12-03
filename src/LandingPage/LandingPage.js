@@ -36,7 +36,7 @@ export default function LandingPage(props) {
     {
   
       name: "Python",
-      desc: "Python, the friendly language designed by Guido van Rossum, is known for its simplicity and readability. It's a versatile language used for a bit of everything - web development, scientific research, artificial intelligence, and even creating fun little games. When you use Python, you're stepping into a world where creativity knows no bounds.",
+      desc: "Python, the friendly language designed by Guido van Rossum, is known for its simplicity and readability. It's a versatile language used for a bit of everything - web development, scientific research, artificial intelligence, and even creating fun little games.",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
       progress: "35%",
@@ -65,7 +65,7 @@ export default function LandingPage(props) {
      <Grid container spacing={2}>
      {linksToDisplay.map((object, i) => (
                 <Grid item key={i} xs={12} sm={6} md={4} lg={3}> 
-                  <Card  style={{ boxShadow: "2px 2px 5px", width:'100%', height:'100%', marginLeft: '300px' }}
+                  <Card  style={{ boxShadow: "2px 2px 5px", width:'100%', height:'100%', marginLeft: '300px', marginTop: '50px' }}
                     sx={{ maxWidth: 345, display: 'flex', flexDirection: 'column'  }}>
                     <StyledCard onClick={() => navigate(object.link)}>
                     <CardMedia
@@ -80,11 +80,13 @@ export default function LandingPage(props) {
                       <Typography gutterBottom variant="h5" component="div">
                         {object.name}
                       </Typography>
+                      <div style={{width: '300px', height:'100px', overflow: 'break-word', marginBottom: '50px'}}>
                       <Typography variant="body2" color="text.secondary">
                         {object.desc}
                       </Typography>
+                      </div>
                     </CardContent>
-                    <CardActions>
+                    <CardActions style={{ marginTop: 'auto' }}>
                       <Button
                         size="small"
                         onClick={() => navigate(object.link)}
