@@ -113,7 +113,7 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
     setSearchWithinCategory(searchCategoriesObj)
     // grey out certain lessons
     const username = sessionStorage.getItem('userName')
-    if(title.toLowerCase().includes('lessons') && username === 'steve'){
+    if(title.toLowerCase().includes('lessons') && username === 'ben'){
       accordionCategories.forEach(c=> {
         if(c.name === 'Loops'){
           c.children.forEach(child=> {
