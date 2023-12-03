@@ -1,22 +1,25 @@
 body {
-    font-family: "Nunito Sans","Segoe UI",sans-serif;
+  font-family: "Nunito Sans", "Segoe UI", sans-serif;
 }
 
 input {
-    background-color: white !important;
+  background-color: white !important;
 }
 .MuiInputBase-root {
-    background-color: white !important;
+  background-color: white !important;
 }
 
 .layout {
-    display: flex;
-    
+  display: flex;
 }
 
 .routes {
-    flex-grow: 1.5;
+  flex-grow: 1.5;
 }
 
 .sidebar {
+}
+
+body {
+  background: url(Bee.png);
 }
