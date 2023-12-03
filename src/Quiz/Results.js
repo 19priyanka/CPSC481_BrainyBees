@@ -1,49 +1,31 @@
 import React from "react";
-import Genericresultsection from "./Genericresultsection";
+import { useLocation } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
 import ShowPath from "../Showpath";
-import { red } from "@mui/material/colors";
-import { bottom } from "@popperjs/core";
+import {
+  Radio,
+  RadioGroup,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+} from "@mui/material";
+import "./Quiz.css";
 
 export default function Results() {
-  const Solutions = [
-    {
-      question: "What does a 'for loop' do in C++ programming?",
-      choice1: "Tells the computer to stop",
-      choice2: "Repeats a set of instructions a specific number of times",
-      choice3: " Displays a message on the screen",
-      correct: true,
-    },
-    {
-      question: "How do you write a 'for loop' in C++?",
-      choice1: "'if (condition) { /* code here */ }'",
-      choice2: "'while (condition) { /* code here */ }'",
-      choice3:
-        "'for (initialization; condition; increment) { /* code here */ }'",
-      solution: "choice3",
-      correct: false,
-    },
-    {
-      question:
-        "How many times will this 'for loop' repeat in C++: for (int i = 0; i < 5; i++) { /* code here */ }",
-      choice1: "5 times",
-      choice2: "4 times",
-      choice3: "6 times",
-      solution: "choice1",
-      correct: true,
-    },
-    {
-      question:
-        "What is the result of this 'for loop' in C++: for (int i = 0; i < 3; i++) { cout << 'Hello'; }",
-      choice1: "'Hello'",
-      choice2: "'HelloHello'",
-      choice3: "'Hello' printed 3 times",
-      solution: false,
-    },
-  ];
+  const location = useLocation();
+  const { questions: updatedQuestions } = location.state || {};
+  const totalQuestions = updatedQuestions.length;
+  const correctAnswers = updatedQuestions.filter(
+    (question) => question.correct === question.solution
+  ).length;
+  const percentCorrect = Math.trunc((correctAnswers / totalQuestions) * 100);
+
+  const correct = "✅";
+  const wrong = "❌";
+
   return (
     <>
-      <ShowPath></ShowPath>
+      <ShowPath />
       <h1 style={{ color: "blue" }}>RESULTS</h1>
       <div
         style={{
@@ -54,14 +36,78 @@ export default function Results() {
         <CircularProgress
           style={{ color: "red" }}
           variant="determinate"
-          value={45}
+          value={percentCorrect}
         />
-        <h3 style={{ display: "inline" }}>45%</h3>
+        <h3 style={{ display: "inline" }}>{percentCorrect}%</h3>
       </div>
       <br />
       <br />
 
-      <Genericresultsection questions={Solutions} />
+      <Genericresultsection questions={updatedQuestions} />
+    </>
+  );
+}
+
+function Genericresultsection({ questions }) {
+  const correct = "✅";
+  const wrong = "❌";
+
+  return (
+    <>
+      {questions.map((question, index) => {
+        const isSolution = question.correct === question.solution;
+
+        return (
+          <div
+            className="rounded"
+            key={index}
+            style={{
+              backgroundColor: isSolution ? "#F0FFF0" : "#ff1a0012",
+              padding: "10px",
+              marginBottom: "20px",
+            }}
+          >
+            <FormControl>
+              <FormLabel id={`demo-radio-buttons-group-label-${index}`}>
+                {question.question}
+              </FormLabel>
+              <RadioGroup
+                aria-labelledby={`demo-radio-buttons-group-label-${index}`}
+                name={`radio-buttons-group-${index}`}
+              >
+                {[question.choice1, question.choice2, question.choice3].map(
+                  (choice, choiceIndex) => (
+                    <FormControlLabel
+                      key={choiceIndex}
+                      value={choice}
+                      control={
+                        <Radio
+                          disabled={
+                            choice !== question.correct &&
+                            choice !== question.solution
+                          }
+                          className={`${
+                            isSolution && choice === question.correct
+                              ? "correct-choice"
+                              : ""
+                          } ${!isSolution ? "wrong-solution" : ""}`}
+                        />
+                      }
+                      label={
+                        choice === question.correct
+                          ? `${choice} ${correct} `
+                          : !isSolution && choice === question.solution
+                          ? `${choice} ${wrong}`
+                          : choice
+                      }
+                    />
+                  )
+                )}
+              </RadioGroup>
+            </FormControl>
+          </div>
+        );
+      })}
     </>
   );
 }

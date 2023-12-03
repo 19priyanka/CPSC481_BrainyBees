@@ -14,16 +14,6 @@
   gap: 50%;
 }
 
-.padding {
-  padding-left:3%;
-  padding-right: 3%;
-}
-
-.search-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 .center {
   display: flex;
   align-items: center;
@@ -49,10 +39,6 @@
   grid-gap: 1em;
 }
 
-.LoopsSummaryAccordion{
-  background-color: red;
-}
-
 .center {
   display: flex;
   align-items: center;
@@ -68,4 +54,17 @@
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 1em;
+}
+
+/* styles.css */
+.custom-image-class {
+  height: 1%; /* Set the height of the image */
+  width: 10%; /* Ensure the image takes the full width of the container */
+  max-height: 285px;
+  min-height: 285px;
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+body {
+  background-color: #fffa5a26;
 }

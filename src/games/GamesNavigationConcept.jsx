@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './games.css';
 import GenericSelectionPage from "../GenericSelectionPage.jsx"
-
+import GenericAccordionSelectionPage from "../GenericAccordionSelectionPage.jsx"
 import ShowPath from '../Showpath';
 
 function GamesNavigationConcept(props) {
@@ -11,13 +11,48 @@ function GamesNavigationConcept(props) {
     {link:'/games',name:'Variables'} ,{link:'/games',name:'File IO'},{link:'/games',name:'C++ Templates'},
     {link:'/games',name:'Maps Data Structure'} ,{link:'/games',name:'Array Data Structure'},{link:'/games',name:'C++ Strings'},
   ]
-    
+    const accordionCategories = [
+      {
+        name:'Operators',
+        children:[
+
+
+        ],
+        Summary:'Operators summary'
+
+      },
+      {
+        name:'Loops',
+        children:[
+          {link:'/games/loops/forloopgame',name:'For Loop Game'},{link:'/games/loops/whileloopgame',name:'While Loop Game'},
+        {link:'/games/loops/whileloopgame',name:'Do While Loop Game'}, 
+        {link:'/games/',name:'Nested Loop Game'}, 
+        {link:'/games/',name:'Hashmap loops'}
+        ,{link:'/games/',name:'Infinite loop Game'}],
+        Summary:'Loops Summary'
+
+      },
+      {
+        name:'File IO',
+        children:[],
+        Summary:'File IO summary'
+
+      },
+      {
+        name:'Conditionals',
+        children:[],
+        Summary:'Conditionals summary'
+
+      },
+
+
+    ]
 
     return (
         <div className='game-container'>
       <ShowPath></ShowPath>
 
-      <GenericSelectionPage links={links} handleLanguageChange={(value)=> {console.log(value)}} title="Games" grid={true}/>
+      <GenericAccordionSelectionPage accordionCategories={accordionCategories} handleLanguageChange={(value)=> {console.log(value)}} title="Games" grid={true}/>
 
     </div>
     )
