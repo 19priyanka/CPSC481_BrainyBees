@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./GenericSelectionPage.css";
 import Button from "@mui/material/Button";
-import { Autocomplete } from "@mui/material";
+import { Autocomplete, Stack } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import SideBar from "./SideBar";
 import Accordion from '@mui/material/Accordion';
@@ -172,21 +172,44 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
           </AccordionSummary>
           <AccordionDetails>
            <div style={{ display: 'flex', alignItems: 'center' }}>
-           <Typography variant="h6" style={{marginBottom: '30px'}}>{x.Summary}</Typography>
-           
+          
+          {imageOption && x.name === 'Loops' && <Typography variant="h6" style={{marginBottom: '30px'}}>{x.Summary}</Typography>}
            {imageOption && x.name === 'Loops' && <img src="https://miro.medium.com/v2/resize:fit:510/0*urnSq8vQ0xujKwid.jpeg" alt="Description" style={{ maxWidth: '20%', height: '20%' }}></img>}
        
             </div>
             <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={searchWithinCategory[x.name] || ''} onChange={(e)=> {searchWithinCateogryChange(e,x.name)}} /></div>
 
           <div className={grid ? 'grid': 'list'}>
-          {x.children.map((object, i) => (
+          
+
+          
+          <Stack item direction="row" spacing={2}>
+        <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
+        <Typography variant="h6">Beginner</Typography>
+          </div>
+          {x.children.slice(0,3).map((object, i) => (
             <div className="list-item">
               <Button style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
                 {object.name}
               </Button>
             </div>
+
           ))}
+            </Stack>
+            <Stack item direction="row" spacing={2}>
+        <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
+        <Typography variant="h6">Advanced</Typography>
+          </div>
+          {x.children.slice(3,6).map((object, i) => (
+            <div className="list-item">
+              <Button style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
+                {object.name}
+              </Button>
+            </div>
+
+          ))}
+            </Stack>
+    
         </div>
            
           </AccordionDetails>
