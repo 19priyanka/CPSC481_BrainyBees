@@ -1,44 +1,48 @@
 /* SupplementaryDocs.css */
 .supplementary-docs {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-  }
-  
-  .top-left {
-    text-align: left;
-  }
-  
-  .top-center {
-    text-align: center;
-  }
-  
-  .top-right {
-    text-align: right;
-  }
-  
-  main {
-    display: flex;
-    align-items: center;
-  }
-  
-  .text-section {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .image-section {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }  
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.top-center {
+  text-align: center;
+}
+
+main {
+  display: flex;
+}
+
+.text-image-container {
+  flex: 1;
+  display: flex;
+}
+
+.text-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-section {
+  flex: 1;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bottom-left {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
