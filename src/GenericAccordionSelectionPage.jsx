@@ -191,7 +191,7 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
           </div>
           {x.children.slice(0,3).map((object, i) => (
             <div className="list-item">
-              <Button style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
+              <Button id={object.grey ? 'greyed-out' : ''} style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
                 {object.name}
               </Button>
             </div>
