@@ -52,7 +52,7 @@ export default function Genericquestionsection() {
     },
   ];
 
-  const title = "LOOPS";
+  const title = "FOR LOOPS";
 
   const [time, setTime] = useState(80);
   const [blink, setBlink] = useState(false);
@@ -139,6 +139,7 @@ export default function Genericquestionsection() {
   return (
     <>
       <ShowPath></ShowPath>
+
       <section className="mainSection mx-4 mb-4 p-2 rounded" style={pageStyle}>
         <h1 style={{ color: "blue" }}>{title}</h1>
         <Button
