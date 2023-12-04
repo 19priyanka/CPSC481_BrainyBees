@@ -60,7 +60,7 @@ function Homescreenselection({
 
   // trigger event for fefault
   return (
-    <div className="center-vertical d-block mt-0">
+    <div className="cards center-vertical d-block mt-0">
       <div style={{ textAlign: "center" }} className="center d-block">
         <h1 style={{ position: "relative", left: "0%", marginBottom: "1em" }}>
           {title}: {language}
@@ -113,7 +113,6 @@ function Homescreenselection({
                       <CardMedia
                         component="img" // Use the img element as the underlying component
                         image={object.image}
-                        title="green iguana"
                         sx={{ objectFit: "cover" }} // Ensure the image covers the container
                         className="custom-image-class" // Add a custom class for styling
                       />

@@ -59,7 +59,6 @@ function HomeScreen(props) {
   ];
   return (
     <div style={{ marginTop: "1em" }}>
-      
       <Homescreenselection
         links={links}
         grid={true}
