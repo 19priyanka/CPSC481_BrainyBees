@@ -182,13 +182,13 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
        
             </div>
             <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={searchWithinCategory[x.name] || ''} onChange={(e)=> {searchWithinCateogryChange(e,x.name)}} /></div>
-
+            
           <div className={grid ? 'grid': 'list'}>
           
-
+          <Stack spacing={2}>
           
           <Stack item direction="row" spacing={2}>
-        <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
+        <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width:'100px'}}>
         <Typography variant="h6">Beginner</Typography>
           </div>
           {x.children.slice(0,3).map((object, i) => (
@@ -208,7 +208,7 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
           ))}
             </Stack>
             <Stack item direction="row" spacing={2}>
-        <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
+        <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%',width:'100px'}}>
         <Typography variant="h6">Advanced</Typography>
           </div>
           {x.children.slice(3,6).map((object, i) => (
@@ -220,9 +220,9 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
 
           ))}
             </Stack>
-    
+            </Stack>
         </div>
-           
+       
           </AccordionDetails>
         </Accordion>
         </> 
