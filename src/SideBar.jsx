@@ -87,6 +87,18 @@ function SideBar() {
                             label:'Do While Loops',
                             link:'/'
                         },
+                        {
+                            label:'Nested Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Infinite Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Hashmap Loops',
+                            link:'/'
+                        },
                     ]
                 },
                 {
@@ -109,10 +121,10 @@ function SideBar() {
         },
         {
             label:'Games',
+            link:'/games',
             children:[
                 {
                     label:'Loops',
-                    link:'/games/loops',
                     children:[
                         {
                             label:'For Loops',
@@ -124,6 +136,19 @@ function SideBar() {
                         },
                         {
                             label:'Do While Loops',
+                            link:'/'
+                        },
+
+                        {
+                            label:'Nested Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Infinite Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Hashmap Loops',
                             link:'/'
                         },
                     ]
@@ -165,6 +190,18 @@ function SideBar() {
                             label:'Do While Loops',
                             link:'/'
                         },
+                        {
+                            label:'Nested Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Infinite Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Hashmap Loops',
+                            link:'/'
+                        },
                     ]
                 },
                 {
@@ -187,20 +224,33 @@ function SideBar() {
         },
         {
             label:'Supplemental Documents',
+            link:'/supplementarydocs',
             children:[
                 {
                     label:'Loops',
                     children:[
                         {
                             label:'For Loops',
-                            link:'/games/forloopgame'
+                            link:'/supplementarydocs/ForLoop'
                         },
                         {
                             label:'While Loops',
-                            link:'/games/whileloopgame'
+                            link:'/supplementarydocs/WhileLoop'
                         },
                         {
                             label:'Do While Loops',
+                            link:'/supplementarydocs/DoLoop'
+                        },
+                        {
+                            label:'Nested Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Infinite Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Hashmap Loops',
                             link:'/'
                         },
                     ]
@@ -240,6 +290,18 @@ function SideBar() {
                         },
                         {
                             label:'Do While Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Nested Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Infinite Loops',
+                            link:'/'
+                        },
+                        {
+                            label:'Hashmap Loops',
                             link:'/'
                         },
                     ]

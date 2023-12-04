@@ -49,13 +49,14 @@ function Homescreenselection({
   // trigger event for fefault
   return (
     <div className="center-vertical d-block mt-0">
+     
       <div style={{ textAlign: "center" }} className="center d-block">
-        <h1 style={{ position: "relative", left: "17%" }}>
+        <h1 style={{ position: "relative", left: "0%", marginBottom:'1em' }}>
           {title}: {language}
         </h1>
         <div className="container">
           <div
-            style={{ position: "relative", left: "15%", marginBottom: "20px" }}
+            style={{ display: "flex", position: "relative", left: "50%", marginBottom: "20px" }}
           >
             <TextField
               id="outlined-basic"
@@ -66,15 +67,23 @@ function Homescreenselection({
                 searchChange(e);
               }}
             />
+             <Autocomplete
+        sx={{ width: 200, marginLeft: 10 }}
+        options={languages}
+        value={language}
+        renderInput={(params) => (
+          <TextField {...params} label="Change Language" />
+        )}
+        onChange={(event, value) => {
+          handleLanguageChange(value);
+          setLanguage(value);
+        }}
+        defaultValue={def}
+      />
           </div>
 
-          {lessonsLoops && (
-            <div className="loop-description-box">
-              <h2>What are Loops?</h2>
-              <p>Loops are {loopOverview}</p>
-            </div>
-          )}
-          <br></br>
+         
+
           <section>
             <div
               style={{ position: "relative", left: "15%" }}
@@ -86,6 +95,7 @@ function Homescreenselection({
                     style={{ boxShadow: "2px 2px 5px" }}
                     sx={{ maxWidth: 345 }}
                   >
+                   
                     <CardMedia
                       component="img" // Use the img element as the underlying component
                       alt="green iguana"
@@ -117,6 +127,7 @@ function Homescreenselection({
                         {object.progress} Complete
                       </Button>
                     </CardActions>
+  
                   </Card>
                 </div>
               ))}
@@ -125,19 +136,7 @@ function Homescreenselection({
         </div>
       </div>
 
-      <Autocomplete
-        sx={{ width: 200, marginLeft: 10 }}
-        options={languages}
-        value={language}
-        renderInput={(params) => (
-          <TextField {...params} label="Change Language" />
-        )}
-        onChange={(event, value) => {
-          handleLanguageChange(value);
-          setLanguage(value);
-        }}
-        defaultValue={def}
-      />
+      
     </div>
   );
 }

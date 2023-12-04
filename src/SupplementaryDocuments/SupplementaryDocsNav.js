@@ -1,81 +1,51 @@
-import React from 'react';
+import React from "react";
+import Button from '@mui/material/Button';
+import GenericAccordionSelectionPage from "../GenericAccordionSelectionPage.jsx";
 import { useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button'; // Import Material-UI Button
-import './SupplementaryDocsNav.css'; // Import your CSS file
 
-function SupplementaryDocsNav(props) {
+export default function SupplementaryDocs() {
   const navigate = useNavigate();
 
   const accordionCategories = [
     {
-      name:'Operators',
-      children:[
-
-
+      name: 'Variables',
+      children: [],
+      Summary: 'Variables Summary'
+    },
+    {
+      name: 'Loops',
+      children: [
+        { link: "/supplementarydocs/ForLoop", name: 'For Loops' },
+        { link: "/supplementarydocs/WhileLoop", name: 'While Loops' },
+        { link: "/supplementarydocs/DoLoop", name: 'Do While Loops' },
+        {link:"/supplementarydocs/NestedLoop",name:'Nested Loops'}, 
+        {link:'',name:'Hashmap loops'},
+        {link:'',name:'Infinite loops'}
       ],
-      Summary:'Operators summary'
-
+      Summary: 'Loops Summary'
     },
     {
-      name:'Loops',
-      children:[
-        {link:"/PracticeProblems/Loops/ForLoop",name:'For Loops '},
-        {link:"/PracticeProblems/Loops/WhileLoop",name:'While Loops '},
-      {link:"/PracticeProblems/Loops/DoLoop",name:'Do While Loops '}, 
-      {link:"/PracticeProblems/Loops/NestedLoop",name:'Nested Loops'}, 
-      {link:'',name:'Hashmap loops'}
-      ,{link:'',name:'Infinite loops'}],
-      Summary:'Loops Summary'
-
+      name: 'Conditionals',
+      children: [],
+      Summary: 'Conditionals Summary'
     },
     {
-      name:'File IO',
-      children:[],
-      Summary:'File IO summary'
-
+      name: 'Pointers',
+      children: [],
+      Summary: 'Pointers Summary'
     },
     {
-      name:'Conditionals',
-      children:[],
-      Summary:'Conditionals summary'
-
-    },
-
-
-  ]
+      name: 'Inheritance',
+      children: [],
+      Summary: 'Inheritance Summary'
+    }
+  ];
 
   return (
     <>
-      <h1 style={{ color: 'blue' }}>Supplementary Documents</h1>
-      <div className="button-container">
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate('/supplementary-docs/variables')}
-          style={{ width: '200px' }} // Set the button width as desired
-        >
-          Variables
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate('/supplementary-docs/conditional-statements')}
-          style={{ width: '200px' }} // Set the button width as desired
-        >
-          Conditional Statements
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate('/supplementary-docs/loops')}
-          style={{ width: '200px' }} // Set the button width as desired
-        >
-          Loops
-        </Button>
-        
-      </div>
+      <GenericAccordionSelectionPage accordionCategories={accordionCategories} handleLanguageChange={(value) => { console.log(value) }} title="Supplemental Documents"  grid={true}/>
+      
+      
     </>
   );
 }
-
-export default SupplementaryDocsNav;

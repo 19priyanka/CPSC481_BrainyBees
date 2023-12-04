@@ -35,7 +35,9 @@ function ShowPath(props) {
             if(match !== null){
              nameSplitByCaptials = match.join(' ');
             }
+          
             linkObjArray.push({link,name:nameSplitByCaptials});
+            
         })
         setPath(linkObjArray);
         },0)

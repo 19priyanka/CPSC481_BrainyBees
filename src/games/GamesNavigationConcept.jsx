@@ -25,10 +25,10 @@ function GamesNavigationConcept(props) {
         name:'Loops',
         children:[
           {link:'/games/loops/forloopgame',name:'For Loop Game'},{link:'/games/loops/whileloopgame',name:'While Loop Game'},
-        {link:'/games/loops',name:'Do While Loop Game'}, 
-        {link:'/games/loops',name:'Nested Loop Game'}, 
-        {link:'/games/loops',name:'Hashmap loops'}
-        ,{link:'/games/loops',name:'Infinite loop Game'}],
+        {link:'/games/loops/whileloopgame',name:'Do While Loop Game'}, 
+        {link:'/games/',name:'Nested Loop Game'}, 
+        {link:'/games/',name:'Hashmap loops'}
+        ,{link:'/games/',name:'Infinite loop Game'}],
         Summary:'Loops Summary'
 
       },

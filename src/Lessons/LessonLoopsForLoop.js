@@ -1,6 +1,7 @@
   import { Grid, Button, Typography, List, ListItem, Dialog, DialogActions, DialogTitle, Slide } from "@mui/material";
   import * as React from "react";
   import { useNavigate } from "react-router-dom";
+  import { useEffect } from "react";
   import ShowPath from "../Showpath.jsx";
   import "./LessonLoopsForLoops.css";
 
@@ -19,6 +20,13 @@
   const handleClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    const username = sessionStorage.getItem('userName');
+
+    localStorage.setItem("forLoopsVisited"+username, "true");
+
+  }, []);
 
     
     return (

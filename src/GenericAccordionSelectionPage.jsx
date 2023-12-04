@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./GenericSelectionPage.css";
 import Button from "@mui/material/Button";
-import { Autocomplete } from "@mui/material";
+import { Autocomplete, Stack } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import SideBar from "./SideBar";
 import Accordion from '@mui/material/Accordion';
@@ -26,17 +26,14 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
 
   const searchChangeCategory = (event) => {
     const currentInput = event.target.value
-
-    
-  
     const filtered = accordionCategories.filter((c) => {
-      return c.name.toLowerCase().includes(currentInput)
+      return c.name.toLowerCase().includes(currentInput.toLowerCase())
     })
     if(currentInput.length > 1){
     const filterByChildren = accordionCategories.filter((c) => 
     {
       return c.children.some((child)=> {
-        return child.name.toLowerCase().includes(currentInput)
+        return child.name.toLowerCase().includes(currentInput.toLowerCase())
       })
     }
     )
@@ -61,19 +58,19 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
   }
 
   const filterWithinCategories = (accordionCategory,currentInput)=> {
-
+    debugger;
     // when filtered, we need to keep track of the original children so we can filter again, otherwise we will lose the original children
     // first time, there are no original children , but after filtering once there will be
     if(!accordionCategory.originalChildren){
       const filtered = accordionCategory.children.filter((c) => {
-        return c.name.toLowerCase().includes(currentInput)
+        return c.name.toLowerCase().includes(currentInput.toLowerCase())
       })
       accordionCategory.originalChildren = accordionCategory.children
       accordionCategory.children = filtered
       }
       else {
           const filtered = accordionCategory.originalChildren.filter((c) => {
-              return c.name.toLowerCase().includes(currentInput)
+              return c.name.toLowerCase().includes(currentInput.toLowerCase())
             })
               accordionCategory.children = filtered
   
@@ -91,10 +88,11 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
     setSearchWithinCategory({...searchWithinCategory})
    
     const accordionCategory = accordionCategories.find(c=> c.name === name)
+    debugger
     
     filterWithinCategories(accordionCategory,currentInput)
 
-    if(!accordionCategoriesToDisplay.find(accordionCategory)) {
+    if(!accordionCategoriesToDisplay.find(c => c.name === accordionCategory.name)) {
         setAccordionCategoriesToDisplay([...accordionCategoriesToDisplay,accordionCategory])
     }
     
@@ -111,6 +109,21 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
         searchCategoriesObj[c.name] = ''
     })
     setSearchWithinCategory(searchCategoriesObj)
+    // grey out certain lessons
+    const username = sessionStorage.getItem('userName')
+    if(title.toLowerCase().includes('lessons') && username){
+      accordionCategories.forEach(c=> {
+        if(c.name.toLowerCase() === 'loops'){
+          const whileLoops  = localStorage.getItem("whileLoopsVisited"+username)
+          const forLoops = localStorage.getItem("forLoopsVisited"+username)
+          c.children.forEach(child=> {
+            if((child.name.toLowerCase() === 'for loops' && forLoops) || (child.name.toLowerCase() === 'for loops' && username === 'ben') || (child.name.toLowerCase() === 'while loops' && whileLoops)){
+              child.grey = true;
+            }
+          })
+        }
+      })
+    }
 
   }, [accordionCategories,handleLanguageChange])
 
@@ -161,21 +174,44 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
           </AccordionSummary>
           <AccordionDetails>
            <div style={{ display: 'flex', alignItems: 'center' }}>
-           <Typography variant="h6" style={{marginBottom: '30px'}}>{x.Summary}</Typography>
-           
-           {imageOption && <img src="https://miro.medium.com/v2/resize:fit:510/0*urnSq8vQ0xujKwid.jpeg" alt="Description" style={{ maxWidth: '20%', height: '20%' }}></img>}
+          
+          {imageOption && x.name === 'Loops' && <Typography variant="h6" style={{marginBottom: '30px'}}>{x.Summary}</Typography>}
+           {imageOption && x.name === 'Loops' && <img src="https://miro.medium.com/v2/resize:fit:510/0*urnSq8vQ0xujKwid.jpeg" alt="Description" style={{ maxWidth: '20%', height: '20%' }}></img>}
        
             </div>
             <div style={{marginBottom:'20px'}}><TextField id="outlined-basic" label="Search" variant="outlined" value={searchWithinCategory[x.name] || ''} onChange={(e)=> {searchWithinCateogryChange(e,x.name)}} /></div>
 
           <div className={grid ? 'grid': 'list'}>
-          {x.children.map((object, i) => (
+          
+
+          
+          <Stack item direction="row" spacing={2}>
+        <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
+        <Typography variant="h6">Beginner</Typography>
+          </div>
+          {x.children.slice(0,3).map((object, i) => (
             <div className="list-item">
-              <Button style={{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
+              <Button style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
                 {object.name}
               </Button>
             </div>
+
           ))}
+            </Stack>
+            <Stack item direction="row" spacing={2}>
+        <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
+        <Typography variant="h6">Advanced</Typography>
+          </div>
+          {x.children.slice(3,6).map((object, i) => (
+            <div className="list-item">
+              <Button style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
+                {object.name}
+              </Button>
+            </div>
+
+          ))}
+            </Stack>
+    
         </div>
            
           </AccordionDetails>

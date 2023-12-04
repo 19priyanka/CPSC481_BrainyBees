@@ -1,11 +1,18 @@
 import { Grid, Button } from "@mui/material";
 import * as React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ShowPath from "../Showpath.jsx";
 import "./LessonLoopsForLoops.css";
 
 function LessonLoopsWhileLoop() {
     const navigate = useNavigate();
+
+    useEffect(() => {
+      const username = sessionStorage.getItem('userName');
+      localStorage.setItem("whileLoopsVisited"+username, "true");
+
+    }, []);
  
     return (
       <>
