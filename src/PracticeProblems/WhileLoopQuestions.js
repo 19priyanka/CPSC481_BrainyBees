@@ -11,11 +11,11 @@ export default function WhileLoopQuestions() {
       choice3: " To bake a virtual pizza",
     },
     {
-      question: "How do you know when to stop a while loop from running?",
-      choice1: "When a specific condition becomes false",
-      choice2: "When you see a shooting star",
+      question: "A __________ continues to execute as long as a certain condition remain true",
+      choice1: "while loop",
+      choice2: "running loop",
       choice3:
-        "When you're hungry",
+        "stopping loop",
     },
     {
       question:
