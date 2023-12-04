@@ -147,7 +147,7 @@ function Navbar() {
                 onClick={() => {
                   navigate("/homescreen");
                 }}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "black", display: "block" }}
               >
                 Brainy Bees
               </Button>
@@ -168,7 +168,7 @@ function Navbar() {
                 onClick={() => {
                   navigate("/homescreen");
                 }}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "black", display: "block" }}
               >
                 Brainy Bees
               </Button>
@@ -186,7 +186,7 @@ function Navbar() {
                     sx={{
                       "&:hover": { backgroundColor: "#00008B" },
                       my: 2,
-                      color: "white",
+                      color: "black",
                       display: "block",
                       ...(page.link === currentPage
                         ? { textDecoration: "underline" }
@@ -206,7 +206,7 @@ function Navbar() {
                         onClick={() => {
                           navigate("/login");
                         }}
-                        sx={{ my: 2, color: "white", display: "block" }}
+                        sx={{ my: 2, color: "black", display: "block" }}
                       >
                         Login
                       </Button>
@@ -214,7 +214,7 @@ function Navbar() {
                         onClick={() => {
                           navigate("/signup");
                         }}
-                        sx={{ my: 2, color: "white", display: "block" }}
+                        sx={{ my: 2, color: "black", display: "block" }}
                       >
                         Sign Up
                       </Button>

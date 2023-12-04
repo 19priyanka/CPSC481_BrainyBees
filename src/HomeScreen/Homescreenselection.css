@@ -69,3 +69,7 @@
 body {
   background-color: #fffa5a26;
 }
+.cards {
+  position: relative;
+  left: -18%;
+}
