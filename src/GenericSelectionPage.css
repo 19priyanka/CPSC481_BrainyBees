@@ -94,3 +94,12 @@
   color:#ffa700
   !important;
 }
+
+.css-ypesuj-MuiButtonBase-root-MuiButton-root {
+  background-color:#ffa700
+  !important;
+}
+
+#greyed-out {
+  background-color: grey !important;
+}
