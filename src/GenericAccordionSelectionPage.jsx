@@ -11,6 +11,8 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Badge from "@mui/material/Badge";
+
 // accordion categories should be an array of objects in this format { name: 'name;summary:'summary' , children: [{link:'link', name:'name'}]} handle change is how to handle the change in the language
 function GenericSelectionPage({
   accordionCategories,
