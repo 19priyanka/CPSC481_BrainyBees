@@ -25,7 +25,8 @@ export default function Results() {
 
   return (
     <>
-      <ShowPath />
+      <ShowPath></ShowPath>
+
       <h1 style={{ color: "blue" }}>RESULTS</h1>
       <div
         style={{

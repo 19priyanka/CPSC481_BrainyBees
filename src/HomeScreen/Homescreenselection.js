@@ -5,11 +5,23 @@ import "./Homescreenselection.css";
 import Button from "@mui/material/Button";
 import { Autocomplete } from "@mui/material";
 import TextField from "@mui/material/TextField";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  CardActionArea,
+} from "@mui/material";
+
 import Typography from "@mui/material/Typography";
+import { styled } from "@mui/system";
+
+const StyledCard = styled(CardActionArea)({
+  "&:hover": {
+    backgroundColor: "#D6FCFB",
+  },
+});
+
 // links should be an array of objects in this format {link:'link', name:'name'} handle change is how to handle the change in the language
 function Homescreenselection({
   links,
@@ -49,14 +61,18 @@ function Homescreenselection({
   // trigger event for fefault
   return (
     <div className="center-vertical d-block mt-0">
-     
       <div style={{ textAlign: "center" }} className="center d-block">
-        <h1 style={{ position: "relative", left: "0%", marginBottom:'1em' }}>
+        <h1 style={{ position: "relative", left: "0%", marginBottom: "1em" }}>
           {title}: {language}
         </h1>
         <div className="container">
           <div
-            style={{ display: "flex", position: "relative", left: "50%", marginBottom: "20px" }}
+            style={{
+              display: "flex",
+              position: "relative",
+              left: "50%",
+              marginBottom: "20px",
+            }}
           >
             <TextField
               id="outlined-basic"
@@ -67,22 +83,20 @@ function Homescreenselection({
                 searchChange(e);
               }}
             />
-             <Autocomplete
-        sx={{ width: 200, marginLeft: 10 }}
-        options={languages}
-        value={language}
-        renderInput={(params) => (
-          <TextField {...params} label="Change Language" />
-        )}
-        onChange={(event, value) => {
-          handleLanguageChange(value);
-          setLanguage(value);
-        }}
-        defaultValue={def}
-      />
+            <Autocomplete
+              sx={{ width: 200, marginLeft: 10 }}
+              options={languages}
+              value={language}
+              renderInput={(params) => (
+                <TextField {...params} label="Change Language" />
+              )}
+              onChange={(event, value) => {
+                handleLanguageChange(value);
+                setLanguage(value);
+              }}
+              defaultValue={def}
+            />
           </div>
-
-         
 
           <section>
             <div
@@ -95,39 +109,39 @@ function Homescreenselection({
                     style={{ boxShadow: "2px 2px 5px" }}
                     sx={{ maxWidth: 345 }}
                   >
-                   
-                    <CardMedia
-                      component="img" // Use the img element as the underlying component
-                      alt="green iguana"
-                      image={object.image}
-                      title="green iguana"
-                      sx={{ objectFit: "cover" }} // Ensure the image covers the container
-                      className="custom-image-class" // Add a custom class for styling
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {object.name}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {object.desc}
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button
-                        size="small"
-                        onClick={() => navigate(object.link)}
-                      >
-                        Start Learning!
-                      </Button>
-                      <Button
-                        className="position-relative float-end"
-                        variant="outlined"
-                        disabled
-                      >
-                        {object.progress} Complete
-                      </Button>
-                    </CardActions>
-  
+                    <StyledCard onClick={() => navigate(object.link)}>
+                      <CardMedia
+                        component="img" // Use the img element as the underlying component
+                        image={object.image}
+                        title="green iguana"
+                        sx={{ objectFit: "cover" }} // Ensure the image covers the container
+                        className="custom-image-class" // Add a custom class for styling
+                      />
+
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {object.name}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {object.desc}
+                        </Typography>
+                      </CardContent>
+                      <CardActions>
+                        <Button
+                          size="small"
+                          onClick={() => navigate(object.link)}
+                        >
+                          Start Learning!
+                        </Button>
+                        <Button
+                          className="position-relative float-end"
+                          variant="outlined"
+                          disabled
+                        >
+                          {object.progress} Complete
+                        </Button>
+                      </CardActions>
+                    </StyledCard>
                   </Card>
                 </div>
               ))}
@@ -135,8 +149,6 @@ function Homescreenselection({
           </section>
         </div>
       </div>
-
-      
     </div>
   );
 }
