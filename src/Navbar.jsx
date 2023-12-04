@@ -224,7 +224,7 @@ function Navbar() {
                       className="welcome-banner"
                       onClick={openUserMenu}
                     >
-                      Welcome {userName} 👦
+                      Welcome {userName} 👦🏾
                     </div>
                   )}
                 </Box>
