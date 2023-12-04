@@ -97,7 +97,7 @@ int main() {
         <br/>
         [c] There is 37
          </div>),
-      correctAnswer: (<div><br/>"There are 38 MARVEL superheroes, now try to name them all!"</div>),
+      correctAnswer: (<div><br/>There are 38 MARVEL superheroes, now try to name them all!</div>),
       image: superh,
     },
 
