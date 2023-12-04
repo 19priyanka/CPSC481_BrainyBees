@@ -199,9 +199,9 @@ function GenericSelectionPage({
             
           <div className={grid ? 'grid': 'list'}>
           
-          <Stack spacing={2}>
+          <Stack spacing={3}>
           
-          <Stack item direction="row" spacing={2}>
+          <Stack item direction="row" spacing={3}>
         <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width:'100px'}}>
         <Typography variant="h6">Beginner</Typography>
           </div>
@@ -221,7 +221,7 @@ function GenericSelectionPage({
 
           ))}
             </Stack>
-            <Stack item direction="row" spacing={2}>
+            <Stack item direction="row" spacing={3}>
         <div style={{display:'flex', alignItems: 'center', justifyContent: 'center', height: '100%',width:'100px'}}>
         <Typography variant="h6">Advanced</Typography>
           </div>
