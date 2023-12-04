@@ -81,3 +81,19 @@ body {
     left: 0%;
   }
 }
+@media only screen and (min-width: 992px) {
+.container1, .container-lg1, .container-md1, .container-sm1 {
+	max-width: 960px;
+}
+}
+
+@media only screen and (min-width: 1400px) {
+  .container1, .container-lg1, .container-md1, .container-sm1 {
+    max-width: 1000px;
+  }
+  }
+  @media only screen and (min-width: 1500px) {
+    .container1, .container-lg1, .container-md1, .container-sm1 {
+      max-width: 1138px;
+    }
+    }

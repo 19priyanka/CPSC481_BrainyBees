@@ -65,7 +65,7 @@ function Homescreenselection({
         <h1 style={{ position: "relative", left: "0%", marginBottom: "1em" }}>
           {title}: {language}
         </h1>
-        <div className="container">
+        <div className="container1">
           <div
             style={{
               display: "flex",
