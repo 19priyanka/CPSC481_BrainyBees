@@ -11,6 +11,8 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Badge from '@mui/material/Badge';
+
 // accordion categories should be an array of objects in this format { name: 'name;summary:'summary' , children: [{link:'link', name:'name'}]} handle change is how to handle the change in the language
 function GenericSelectionPage({ accordionCategories, handleLanguageChange, title, grid, imageOption }) {
   const navigate = useNavigate();
@@ -191,9 +193,16 @@ function GenericSelectionPage({ accordionCategories, handleLanguageChange, title
           </div>
           {x.children.slice(0,3).map((object, i) => (
             <div className="list-item">
+              { object.grey ?<>
+              <Badge badgeContent='Completed' color="success">
               <Button id={object.grey ? 'greyed-out' : ''} style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
                 {object.name}
               </Button>
+              </Badge> </>
+              : <Button id={object.grey ? 'greyed-out' : ''} style={object.grey ? {maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em', backgroundColor:'grey'}  :{maxWidth: '11em', maxHeight: '5em', minWidth: '11em', minHeight: '5em'}} variant="contained" onClick={() => navigate(object.link)}>
+              {object.name}
+            </Button>
+              }
             </div>
 
           ))}
