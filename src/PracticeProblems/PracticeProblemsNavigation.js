@@ -56,7 +56,7 @@ function PracticeProblemNavigation(props) {
   return (
     <>
       <ShowPath></ShowPath>
-      <GenericAccordionSelectionPage accordionCategories={accordionCategories} handleLanguageChange={(value)=> {console.log(value)}} title="BrainyBees Practice Problem Navigation"/>
+      <GenericAccordionSelectionPage grid accordionCategories={accordionCategories} handleLanguageChange={(value)=> {console.log(value)}} title="Practice Problem"/>
     </>
   );
 }
