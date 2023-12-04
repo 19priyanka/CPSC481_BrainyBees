@@ -57,7 +57,6 @@ function SupplementaryDocs() {
         </div>
       </main>
       <div className="bottom-left">
-        {/* Additional content */}
       </div>
     </div>
   );
