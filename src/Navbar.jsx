@@ -9,7 +9,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useLocation } from "react-router";
 import MenuItem from "@mui/material/MenuItem";
-
 import Menu from "@mui/material/Menu";
 
 // links should be an array of objects in this format {link:'link', name:'name'} handle change is how to handle the change in the language
@@ -149,7 +148,7 @@ function Navbar() {
                 }}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
-                Brainy Bees
+                🐝Brainy Bees
               </Button>
             </Typography>
 
@@ -170,7 +169,7 @@ function Navbar() {
                 }}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
-                Brainy Bees
+                🐝Brainy Bees
               </Button>
             </Typography>
 
@@ -220,8 +219,12 @@ function Navbar() {
                       </Button>
                     </div>
                   ) : (
-                    <div className="welcome-banner" onClick={openUserMenu}>
-                      Welcome {userName}{" "}
+                    <div
+                      style={{ color: "black" }}
+                      className="welcome-banner"
+                      onClick={openUserMenu}
+                    >
+                      Welcome {userName} 👦
                     </div>
                   )}
                 </Box>
