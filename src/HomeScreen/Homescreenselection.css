@@ -63,6 +63,7 @@
   max-height: 285px;
   min-height: 285px;
   object-fit: cover; /* Ensure the image covers the container */
+  background-color: white;
 }
 
 body {
