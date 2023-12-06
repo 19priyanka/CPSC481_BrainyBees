@@ -124,15 +124,32 @@
 }
 
 .css-1g6qkza{
-  background-color:#ffa700
-  !important;
+  background-color:#ffa700 !important;
+  color: black !important;
+
 }
 
 .css-ypesuj-MuiButtonBase-root-MuiButton-root {
-  background-color:#ffa700
-  !important;
+  background-color:#ffa700 !important;
+  color: black !important
+
+}
+
+.css-1lpukdo {
+  background-color:#ffa700 !important;
+  color: black !important
+
+
 }
 
 #greyed-out {
   background-color: grey !important;
+}
+
+
+
+.css-11qr2p8-MuiButtonBase-root-MuiButton-root {
+  background-color:#ffa700 
+  !important;
+  color: black !important
 }
