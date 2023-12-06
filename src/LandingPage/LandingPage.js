@@ -24,6 +24,8 @@ const StyledCard = styled(CardActionArea)({
 
 export default function LandingPage(props) {
   const navigate = useNavigate();
+  const [isUser, setIsUser] = useState(false);
+
 
   const links = [
     {
@@ -50,6 +52,18 @@ export default function LandingPage(props) {
     },
   ];
   const [linksToDisplay, setLinksToDisplay] = useState(links);
+
+  useEffect(() => {
+    const userName = sessionStorage.getItem("userName");
+    if (userName) {
+      setIsUser(true);
+    }
+    else {
+      setIsUser(false);
+    }
+  }, []);
+
+
   return (
     <>
       <Grid container spacing={1} className="header">
@@ -119,6 +133,7 @@ export default function LandingPage(props) {
                     <Button size="small" onClick={() => navigate(object.link)}>
                       Start Learning!
                     </Button>
+                    { isUser &&
                     <Button
                       className="position-relative float-end"
                       variant="outlined"
@@ -126,6 +141,7 @@ export default function LandingPage(props) {
                     >
                       {object.progress} Complete
                     </Button>
+}
                   </CardActions>
                 </StyledCard>
               </Card>

@@ -51,7 +51,7 @@ function App() {
           />
           <Route
             path="/PracticeProblems/Loops"
-            element={<QuizLanding  />}
+            element={<PracticeProblemNavigation  />}
           />
           <Route
             path="/PracticeProblems/Loops/WhileLoop"

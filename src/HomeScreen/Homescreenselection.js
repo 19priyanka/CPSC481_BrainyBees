@@ -33,6 +33,7 @@ function Homescreenselection({
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [linksToDisplay, setLinksToDisplay] = useState(links);
+  const [isUser, setIsUser] = useState(false);
   const def = "C++";
   const loopOverview =
     "Loops are control structures in programming that allow you to execute a block of code repeatedly based on a certain condition. In programming, loops are like a magic spell that lets your computer do the same thing over and over again. Imagine you have a list of chores, like washing dishes or sweeping the floor. Instead of telling your computer to do each chore one by one, you can use loops to make your computer do them all with just a few lines of code.";
@@ -53,6 +54,13 @@ function Homescreenselection({
   useEffect(() => {
     if (handleLanguageChange) {
       handleLanguageChange(def);
+    }
+    const userName = sessionStorage.getItem("userName");
+    if (userName) {
+      setIsUser(true);
+    }
+    else {
+      setIsUser(false);
     }
   }, []);
 
@@ -132,6 +140,7 @@ function Homescreenselection({
                         >
                           Start Learning!
                         </Button>
+                        {isUser && 
                         <Button
                           className="position-relative float-end"
                           variant="outlined"
@@ -139,6 +148,7 @@ function Homescreenselection({
                         >
                           {object.progress} Complete
                         </Button>
+                          }
                       </CardActions>
                     </StyledCard>
                   </Card>
