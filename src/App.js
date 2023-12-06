@@ -26,6 +26,7 @@ import SideBar from "./SideBar";
 import React from 'react';
 import SupplementaryDocsNav from './SupplementaryDocuments/SupplementaryDocsNav';
 import SupplementaryDocs from './SupplementaryDocuments/SupplementaryDocs';
+import Unconstruction from "./underconstruction";
 
 function App() {
   return (
@@ -82,6 +83,7 @@ function App() {
           <Route path="/homescreen" element={<HomeScreen />} />
           <Route path="/supplementarydocs" element={<SupplementaryDocsNav />} /> 
           <Route path="/supplementarydocs/:docType" element={<SupplementaryDocs />} />
+          <Route path = "/underconstruction" element={<Unconstruction/>}></Route>
         </Routes>
         </div>
         </div>

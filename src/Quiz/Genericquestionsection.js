@@ -88,7 +88,7 @@ export default function Genericquestionsection() {
     <>
       <ShowPath></ShowPath>
       <section className="mainSection mx-4 mb-4">
-        <h1 style={{ color: "blue" }}>{title}</h1>
+        <h1 style={{ color: "#ffa700" }}>{title}</h1>
         <Button
           id="timer"
           className="m-4"

@@ -49,7 +49,7 @@ function HomeScreen(props) {
         "https://as1.ftcdn.net/v2/jpg/01/20/65/30/1000_F_120653052_ECItG7Cc46JZJ46B0ABlcpOLUylOnJUs.jpg",
     },
     {
-      link: "/supplmentarydocs",
+      link: "/underconstruction",
       name: "Challenge Problems",
       desc: "Think you're ready for a black belt? Click here for some hardcore challenges!",
       image:

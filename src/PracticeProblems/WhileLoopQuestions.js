@@ -35,7 +35,7 @@ export default function WhileLoopQuestions() {
   return (
     <>
       <ShowPath></ShowPath>
-      <h1 style={{ color: "blue" }}>WHILE LOOPS</h1>
+      <h1 style={{ color: "#ffa700" }}>WHILE LOOPS</h1>
       <WhileLoopQuestionSection questions={loopQns} />;
     </>
   );
