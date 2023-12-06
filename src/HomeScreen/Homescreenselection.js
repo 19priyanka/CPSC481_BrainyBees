@@ -44,7 +44,7 @@ function Homescreenselection({
     const currentInput = event.target.value;
 
     const filteredLinks = links.filter((link) => {
-      return link.name.toLowerCase().includes(currentInput);
+      return link.name.toLowerCase().includes(currentInput.toLowerCase());
     });
 
     setSearch(currentInput);
