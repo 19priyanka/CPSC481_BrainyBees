@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+Brainy Bees - Teaching Young Children How to Code
+README 
+TUT 7: Group 3
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Team:
+Francisco Huayhualla
+Kyle Hasan
+Priyanka Gautam
+Abigia Debebe
+Carlene Kalin
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+Implemented Features: Lessons (only for loops and while loops lesson under loops section), Games( only for loops and while loops under loops section), Quizzes(only for loops under loops section) , Practice Problems(only while loops under loops section) , Supplementary Docs(only for loops under loops section), login using hardcoded user, viewing profile of hardcoded user
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Not implemented: Saving signed up users, challenge problems, changing username, password or email
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Data to fill in:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+On the initial landing page select C++ and not Python or Java, only C++ version of features have been implemented.
 
-### `npm run build`
+Login:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Click “login” on the top navigation bar and enter the details below. Then hit submit to login.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Username: ben
+Password: password
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To view profile click “welcome ben” on the top navigation bar and then click profile.
 
-### `npm run eject`
+Note Ben has completed for loops in lessons and for loops in practice problems
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Games:
+ For loop game - First box fill in 0, second box fill in i, third box fill in 6, last box fill in i. This will complete the game after hitting the submit button and show you the circles colored in.
+While Loop game - Top box fill in  redPosition - bluePosition <= 1, bottom box fill in redDotRunAway();. This will complete the game after hitting the submit button. Should show a quick animation of the red and blue dot moving.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Quizzes:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+For Loops Quiz
 
-## Learn More
+First question choose “Repeats a set of instructions a specific number of times”
+Second question choose “5 times”
+Third question choose “'Hello' printed 3 times”
+After submitting the submit, this should take you to the results page with a 100% score
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Instructions for running project
 
-### Code Splitting
+Make sure node.js is installed. If not install here https://nodejs.org/en
+Navigate to the directory the project is in using a terminal.
+Type this command into the terminal “npm i”
+Once the installations are complete, type this command into the terminal to start the project “npm start”
+This should open the project on port 3000 and display it on your default browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
