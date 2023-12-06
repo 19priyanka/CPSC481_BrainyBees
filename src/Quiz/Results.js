@@ -13,7 +13,7 @@ import "./Quiz.css";
 
 export default function Results() {
   const location = useLocation();
-  const { questions: updatedQuestions } = location.state || {};
+  const { questions: updatedQuestions } = location.state || [];
   const totalQuestions = updatedQuestions.length;
   const correctAnswers = updatedQuestions.filter(
     (question) => question.correct === question.solution
@@ -43,8 +43,9 @@ export default function Results() {
       </div>
       <br />
       <br />
+      {updatedQuestions &&
 
-      <Genericresultsection questions={updatedQuestions} />
+      <Genericresultsection questions={updatedQuestions} /> }
     </>
   );
 }
