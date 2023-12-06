@@ -7,6 +7,8 @@ import {
   FormLabel,
   Button,
 } from "@mui/material";
+import { useState, useEffect } from "react";
+
 
 export default function WhileLoopSolutionsSection({ questions }) {
   return (

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect }from 'react';
 import machine from '../bee_icon/png/machine.png';
 import spaceship from '../bee_icon/png/spaceship.png';
 import superh from '../bee_icon/png/superh.png';
-
 const QuizComponent = () => {
   const questions = [
     {
@@ -113,6 +112,12 @@ int main() {
       [questionId]: !prevExpandedAnswers[questionId],
     }));
   };
+
+  useEffect(() => {
+    const username = sessionStorage.getItem('userName');
+    localStorage.setItem("whileLoopsVisitedlessons"+username, "true");
+
+  }, []);
 
   return (
     <div>

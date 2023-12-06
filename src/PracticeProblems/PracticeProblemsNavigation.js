@@ -29,8 +29,8 @@ function PracticeProblemNavigation(props) {
     {
       name:'Loops',
       children:[
-        {link:"/PracticeProblems/Loops/ForLoop",name:'For Loops '},
-        {link:"/PracticeProblems/Loops/WhileLoop",name:'While Loops '},
+        {link:"/PracticeProblems/Loops/ForLoop",name:'For Loops'},
+        {link:"/PracticeProblems/Loops/WhileLoop",name:'While Loops'},
       {link:"/PracticeProblems/Loops/DoLoop",name:'Do While Loops '}, 
       {link:"/PracticeProblems/Loops/NestedLoop",name:'Nested Loops'}, 
       {link:'',name:'Hashmap loops'}

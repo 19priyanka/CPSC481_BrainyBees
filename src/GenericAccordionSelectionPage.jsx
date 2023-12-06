@@ -121,11 +121,27 @@ function GenericSelectionPage({
           const forLoops = localStorage.getItem("forLoopsVisited" + username);
           c.children.forEach((child) => {
             if (
-              (child.name.toLowerCase() === "for loops" && forLoops) ||
-              (child.name.toLowerCase() === "for loops" &&
+              (child.name.toLowerCase() === "while loops" && whileLoops) ||
+              (child.name.toLowerCase() === "while loops" &&
                 username === "ben") ||
-              (child.name.toLowerCase() === "while loops" && whileLoops)
+              (child.name.toLowerCase() === "for loops" && forLoops)
             ) {
+              child.grey = true;
+            }
+          });
+        }
+      });
+    }
+    else if(title.toLowerCase().includes("practice problem")) {
+      accordionCategories.forEach((c) => {
+       ;
+        if (c.name.toLowerCase() === "loops") {
+          const whileLoops = localStorage.getItem(
+            "whileLoopsVisitedlessons" + username
+          );
+          const forLoops = localStorage.getItem("forLoopsVisitedloopslessons" + username);
+          c.children.forEach((child) => {
+            if ((child.name.toLowerCase() === "for loops" && username === "ben") || (child.name.toLowerCase() === "while loops" && whileLoops)) {
               child.grey = true;
             }
           });
