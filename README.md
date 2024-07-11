@@ -1,3 +1,4 @@
+**NOTE:Please use Safari or any other browser besides Chrome to access the website url for best results**
 Brainy Bees - Teaching Young Children How to Code
 README 
 TUT 7: Group 3
